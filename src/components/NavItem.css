@@ -1,0 +1,19 @@
+* {
+  font-size: 0.8rem;
+}
+
+a {
+  color: black;
+}
+
+.active {
+  font-size: 2rem;
+}
+
+.vertical-bar {
+  height: 15vh;
+}
+
+.vertical-bar > div {
+  width: 1px;
+}
