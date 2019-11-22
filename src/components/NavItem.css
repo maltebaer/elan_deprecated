@@ -1,25 +1,25 @@
-* {
+.i-should-use-sass * {
   font-size: 0.8rem;
 }
 
-a {
+.i-should-use-sass a {
   color: black;
 }
 
-.active {
+.i-should-use-sass .active {
   font-size: 3em;
 }
 
-.single {
+.i-should-use-sass .single {
   margin: 1rem 0;
   height: 10vh;
 }
 
-.double {
+.i-should-use-sass .double {
   margin: 2rem 0;
   height: 20vh;
 }
 
-.vertical-bar > div {
+.i-should-use-sass .vertical-bar > div {
   width: 1px;
 }

@@ -75,14 +75,7 @@ const NavItem: React.FC<INavItemProps> = props => {
     renderItems.unshift(<VerticalBar height="double" />);
   }
 
-  return (
-    <li className={"nav-item"}>
-      {/* <a className={className} href={props.link}>
-        {props.number}
-      </a> */}
-      {renderItems}
-    </li>
-  );
+  return <li className={"nav-item i-should-use-sass"}>{renderItems}</li>;
 };
 
 export default NavItem;

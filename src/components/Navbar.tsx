@@ -1,6 +1,6 @@
 import "./Navbar.css";
 
-import React, { useState } from "react";
+import React from "react";
 
 import NavItem from "./NavItem";
 
@@ -12,18 +12,15 @@ export const routes = {
   "05": "#about"
 };
 
-const Navbar: React.FC = () => {
-  const [hash, setHash] = useState(window.location.hash ? window.location.hash : "#home");
+interface INavbarProps {
+  hash: string;
+}
 
-  const onHashChange = () => {
-    setHash(window.location.hash);
-  };
-  window.onhashchange = onHashChange;
-
+const Navbar: React.FC<INavbarProps> = props => {
   const navItems = [];
   for (let [number, route] of Object.entries(routes)) {
     navItems.push(
-      <NavItem key={number} hash={hash} link={route} number={number as keyof typeof routes} />
+      <NavItem key={number} hash={props.hash} link={route} number={number as keyof typeof routes} />
     );
   }
 

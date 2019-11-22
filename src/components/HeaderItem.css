@@ -1,0 +1,11 @@
+.header-item * {
+  text-transform: uppercase;
+}
+
+.header-item a {
+  color: black;
+}
+
+.header-item .active {
+  text-decoration: line-through;
+}

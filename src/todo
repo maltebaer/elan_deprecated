@@ -3,7 +3,7 @@
 - footer component
 
 - nav component
-
+  - try react-anchor-link-smooth-scroll
 - page component
 
 - routing
@@ -12,3 +12,5 @@
 
 - accordion component
 
+### bugs ###
+- resolve typescript looking for node modules type definitions
