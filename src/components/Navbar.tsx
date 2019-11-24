@@ -25,7 +25,7 @@ const Navbar: React.FC<INavbarProps> = props => {
   }
 
   return (
-    <nav className="navbar-container">
+    <nav className="Navbar">
       <ul className="nav d-flex flex-column d-inline-block">{navItems}</ul>
     </nav>
   );

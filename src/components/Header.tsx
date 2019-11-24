@@ -1,3 +1,4 @@
+import "./Header.css";
 import "./HeaderItem.css";
 
 import React from "react";
@@ -28,17 +29,19 @@ const Header: React.FC<IHeaderProps> = props => {
     );
   }
 
+  const headerSectionStyle = "d-flex align-items-center";
+
   return (
-    <div>
-      <ul className="nav d-flex justify-content-between">
-        <div>
-          <li className="nav-item header-item">
+    <div className="Header">
+      <ul className="h-100 nav d-flex justify-content-between">
+        <span className={headerSectionStyle}>
+          <li className="HeaderItem">
             <a className="nav-link text-center" href="#home">
               {props.hash === "#home" ? "ELAN Berlin" : <img height="40px" src="/elan-logo.png" />}
             </a>
           </li>
-        </div>
-        <div className="d-flex">{headerItems}</div>
+        </span>
+        <span className={headerSectionStyle}>{headerItems}</span>
       </ul>
     </div>
   );

@@ -1,16 +1,15 @@
-- header component
-
-- footer component
-
 - nav component
   - try react-anchor-link-smooth-scroll
-- page component
 
-- routing
+- page component
 
 - form
 
 - accordion component
 
+- refactor HeaderItem and reuse in Header
+
 ### bugs ###
 - resolve typescript looking for node modules type definitions
+
+- url without hash

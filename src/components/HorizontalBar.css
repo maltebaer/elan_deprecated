@@ -1,0 +1,7 @@
+.HorizontalBar {
+  width: 2vw;
+}
+
+.HorizontalBar > div {
+  height: 1px;
+}

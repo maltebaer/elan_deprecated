@@ -3,18 +3,7 @@ import "./NavItem.css";
 import React, { useState, useEffect } from "react";
 
 import { routes } from "./Navbar";
-
-interface IVerticalbarProps {
-  height: "single" | "double";
-}
-
-const VerticalBar: React.FC<IVerticalbarProps> = props => {
-  return (
-    <div className={`vertical-bar ${props.height} d-flex justify-content-center`}>
-      <div className="h-100 bg-dark" />
-    </div>
-  );
-};
+import VerticalBar from "./VerticalBar";
 
 interface INavItemProps {
   hash: string;
@@ -75,7 +64,7 @@ const NavItem: React.FC<INavItemProps> = props => {
     renderItems.unshift(<VerticalBar height="double" />);
   }
 
-  return <li className={"nav-item i-should-use-sass"}>{renderItems}</li>;
+  return <li className={"NavItem"}>{renderItems}</li>;
 };
 
 export default NavItem;

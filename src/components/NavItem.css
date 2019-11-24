@@ -1,25 +1,21 @@
-.i-should-use-sass * {
+.NavItem * {
   font-size: 0.8rem;
 }
 
-.i-should-use-sass a {
+.NavItem a {
   color: black;
 }
 
-.i-should-use-sass .active {
+.NavItem .active {
   font-size: 3em;
 }
 
-.i-should-use-sass .single {
+.NavItem .single {
   margin: 1rem 0;
   height: 10vh;
 }
 
-.i-should-use-sass .double {
+.NavItem .double {
   margin: 2rem 0;
   height: 20vh;
-}
-
-.i-should-use-sass .vertical-bar > div {
-  width: 1px;
 }

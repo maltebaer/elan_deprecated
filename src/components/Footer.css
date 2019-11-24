@@ -1,0 +1,11 @@
+.Footer {
+  height: 7vh;
+}
+
+.Footer a {
+  color: black;
+}
+
+.Footer .fixed-width {
+  width: 20vw;
+}

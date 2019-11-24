@@ -27,7 +27,7 @@ const HeaderItem: React.FC<INavItemProps> = props => {
   }
 
   return (
-    <li className="nav-item header-item">
+    <li className="HeaderItem nav-item">
       <a className={className} href={props.link}>
         {props.keyName.replace(/-/g, " ")}
       </a>

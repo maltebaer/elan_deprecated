@@ -1,0 +1,13 @@
+.VerticalBar .single {
+  margin: 1rem 0;
+  height: 10vh;
+}
+
+.VerticalBar .double {
+  margin: 2rem 0;
+  height: 20vh;
+}
+
+.VerticalBar > div {
+  width: 1px;
+}

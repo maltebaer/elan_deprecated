@@ -1,11 +1,11 @@
-.header-item * {
+.HeaderItem * {
   text-transform: uppercase;
 }
 
-.header-item a {
+.HeaderItem a {
   color: black;
 }
 
-.header-item .active {
+.HeaderItem .active {
   text-decoration: line-through;
 }
