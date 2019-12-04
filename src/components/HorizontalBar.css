@@ -2,6 +2,14 @@
   width: 2vw;
 }
 
+.HorizontalBar .single {
+  width: 1vw;
+}
+
+.HorizontalBar .double {
+  width: 2vw;
+}
+
 .HorizontalBar > div {
   height: 1px;
 }

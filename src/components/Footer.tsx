@@ -20,19 +20,19 @@ const Footer: React.FC = () => {
               Facebook
             </a>
           </li>
-          <HorizontalBar />
+          <HorizontalBar size="double" />
           <li className="footer-item">
             <a href="#" className="nav-link">
               Instagram
             </a>
           </li>
-          <HorizontalBar />
+          <HorizontalBar size="double" />
           <li className="footer-item">
             <a href="#" className="nav-link">
               YouTube
             </a>
           </li>
-          <HorizontalBar />
+          <HorizontalBar size="double" />
           <li className="footer-item">
             <a href="#" className="nav-link">
               Twitter

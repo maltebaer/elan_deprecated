@@ -19,10 +19,10 @@ const App: React.FC = () => {
 
   return (
     <div className="App container-fluid">
-      <div className="forground fixed-top">
+      <div className="extra-padding forground fixed-top">
         <Header hash={hash} />
       </div>
-      <div className="vh-100 fixed-top d-flex justify-content-end align-items-center">
+      <div className="extra-padding vh-100 fixed-top d-flex justify-content-end align-items-center">
         <Navbar hash={hash} />
       </div>
       <ScrollableAnchor id={"home"}>
@@ -50,7 +50,7 @@ const App: React.FC = () => {
           <h1>ABOUT</h1>
         </div>
       </ScrollableAnchor>
-      <div className="forground fixed-bottom">
+      <div className="extra-padding forground fixed-bottom">
         <Footer />
       </div>
     </div>
