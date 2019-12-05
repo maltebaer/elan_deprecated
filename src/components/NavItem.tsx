@@ -1,30 +1,27 @@
 import "./NavItem.css";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-import { routes } from "./Navbar";
+import { routes } from "../App";
 import VerticalBar from "./VerticalBar";
 
 interface INavItemProps {
-  hash: string;
   link: string;
-  number: keyof typeof routes;
+  index: number;
+  active: boolean;
+  onClick: () => void;
 }
 
-const notFirst = (number: string) => {
-  const routeKeys = Object.keys(routes);
-
-  if (number === routeKeys[0]) {
+const notFirst = (index: number) => {
+  if (index === 0) {
     return false;
   }
 
   return true;
 };
 
-const notLast = (number: string) => {
-  const routeKeys = Object.keys(routes);
-
-  if (number === routeKeys[routeKeys.length - 1]) {
+const notLast = (index: number) => {
+  if (index === routes.length - 1) {
     return false;
   }
 
@@ -32,35 +29,25 @@ const notLast = (number: string) => {
 };
 
 const NavItem: React.FC<INavItemProps> = props => {
-  const [active, setActive] = useState(false);
-
-  useEffect(() => {
-    if (props.hash === routes[props.number]) {
-      setActive(true);
-    } else {
-      setActive(false);
-    }
-  }, [props.hash, props.number]);
-
   let className = "nav-link text-center";
-  if (active) {
+  if (props.active) {
     className += " active";
   }
 
   const renderItems = [
-    <a className={className} href={props.link}>
-      {props.number}
-    </a>
+    <span className={className} style={{ cursor: "pointer" }} onClick={props.onClick}>
+      {"0" + (props.index + 1)}
+    </span>
   ];
 
-  if (active && notFirst(props.number) && notLast(props.number)) {
+  if (props.active && notFirst(props.index) && notLast(props.index)) {
     renderItems.unshift(<VerticalBar height="single" />);
     renderItems.push(<VerticalBar height="single" />);
   }
-  if (active && !notFirst(props.number)) {
+  if (props.active && !notFirst(props.index)) {
     renderItems.push(<VerticalBar height="double" />);
   }
-  if (active && !notLast(props.number)) {
+  if (props.active && !notLast(props.index)) {
     renderItems.unshift(<VerticalBar height="double" />);
   }
 

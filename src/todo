@@ -1,12 +1,31 @@
+### general ###
 - nav component
-  - try react-anchor-link-smooth-scroll
+  - try react-router-dom
 
-- page component
+- add full page scrolling
 
+- page component?
+
+## home ##
+- logo
+  - with mouse effect
+
+## what we do ##
+- accordion component?
+
+## work ##
+- showcase component
+
+## our network ##
 - form
+- random images
+  - instagram api
 
-- accordion component
+## about ##
+- portraits
+  - hover effect
 
+### misc ###
 - refactor HeaderItem and reuse in Header
 
 ### bugs ###
