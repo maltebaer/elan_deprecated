@@ -2,7 +2,7 @@
   padding: 0 7rem;
 }
 
-.App .forground {
+.App > .forground {
   z-index: 1040;
 }
 

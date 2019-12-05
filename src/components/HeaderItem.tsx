@@ -1,36 +1,25 @@
 import "./HeaderItem.css";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-import { headerRoutes } from "./Header";
-
-interface INavItemProps {
-  hash: string;
+interface IHeaderItemProps {
   link: string;
-  keyName: keyof typeof headerRoutes;
+  index: number;
+  active: boolean;
+  onClick: () => void;
 }
 
-const HeaderItem: React.FC<INavItemProps> = props => {
-  const [active, setActive] = useState(false);
-
-  useEffect(() => {
-    if (props.hash === headerRoutes[props.keyName]) {
-      setActive(true);
-    } else {
-      setActive(false);
-    }
-  }, [props.hash, props.keyName]);
-
+const HeaderItem: React.FC<IHeaderItemProps> = props => {
   let className = "nav-link";
-  if (active) {
+  if (props.active) {
     className += " active";
   }
 
   return (
     <li className="HeaderItem nav-item">
-      <a className={className} href={props.link}>
-        {props.keyName.replace(/-/g, " ")}
-      </a>
+      <span className={className} style={{ cursor: "pointer" }} onClick={props.onClick}>
+        {props.link.replace(/-/g, " ")}
+      </span>
     </li>
   );
 };

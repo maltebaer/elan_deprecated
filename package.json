@@ -14,7 +14,6 @@
     "react-full-page": "^0.1.7",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
-    "react-scrollable-anchor": "^0.6.1",
     "typescript": "3.7.2"
   },
   "scripts": {
@@ -40,7 +39,6 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.147",
-    "@types/react-router-dom": "^5.1.2",
-    "@types/react-scrollable-anchor": "^0.6.0"
+    "@types/react-router-dom": "^5.1.2"
   }
 }

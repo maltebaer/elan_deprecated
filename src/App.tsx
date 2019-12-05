@@ -1,7 +1,6 @@
 import "./App.css";
 
 import React, { useState } from "react";
-// import ScrollableAnchor from "react-scrollable-anchor";
 import { FullPage, Slide } from "react-full-page";
 
 import Header from "./components/Header";
@@ -11,23 +10,25 @@ import Navbar from "./components/Navbar";
 export const routes = ["home", "what-we-do", "work", "our-network", "about"];
 
 const App: React.FC = () => {
-  const [hash, setHash] = useState(window.location.hash ? window.location.hash : "#home");
+  const fullPageRef = React.createRef();
 
-  const onHashChange = () => {
-    setHash(window.location.hash);
-  };
-  window.onhashchange = onHashChange;
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
-  const setHashValue = ({ from, to }) => {
+  const onAfterChange = ({ from, to }) => {
     window.location.hash = routes[to];
+    setCurrentSlideIndex(to);
+  };
+
+  const onControlsClick = i => {
+    fullPageRef.current.scrollToSlide(i);
   };
 
   return (
     <div className="App container-fluid">
       <div className="extra-padding forground fixed-top">
-        <Header hash={hash} />
+        <Header currentSlideIndex={currentSlideIndex} onClick={onControlsClick} />
       </div>
-      <FullPage controls={Navbar} afterChange={setHashValue}>
+      <FullPage ref={fullPageRef} controls={Navbar} afterChange={onAfterChange}>
         <Slide id={"home"}>
           <h1>HOME</h1>
         </Slide>

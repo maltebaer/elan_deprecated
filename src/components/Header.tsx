@@ -4,30 +4,31 @@ import "./HeaderItem.css";
 import React from "react";
 
 import HeaderItem from "./HeaderItem";
-
-export const headerRoutes = {
-  "what-we-do": "#what-we-do",
-  work: "#work",
-  "our-network": "#our-network",
-  about: "#about"
-};
+import { routes } from "../App";
 
 interface IHeaderProps {
-  hash: string;
+  currentSlideIndex: number;
+  onClick: (i: number) => void;
 }
 
 const Header: React.FC<IHeaderProps> = props => {
-  const headerItems = [];
-  for (let [keyName, route] of Object.entries(headerRoutes)) {
-    headerItems.push(
-      <HeaderItem
-        key={keyName}
-        hash={props.hash}
-        link={route}
-        keyName={keyName as keyof typeof headerRoutes}
-      />
-    );
-  }
+  const renderHeaderItems = (currentSlideIndex: number) => {
+    const headerItems = [];
+
+    routes.slice(1).forEach((route, i) => {
+      const headerItemProps = {
+        active: currentSlideIndex === i + 1,
+        key: i,
+        index: i,
+        link: route,
+        onClick: () => props.onClick(i + 1)
+      };
+
+      headerItems.push(<HeaderItem {...headerItemProps} />);
+    });
+
+    return headerItems;
+  };
 
   const headerSectionStyle = "d-flex align-items-center";
 
@@ -36,12 +37,16 @@ const Header: React.FC<IHeaderProps> = props => {
       <ul className="h-100 nav d-flex justify-content-between">
         <span className={headerSectionStyle}>
           <li className="HeaderItem">
-            <a className="nav-link text-center" href="#home">
-              {props.hash === "#home" ? "ELAN Berlin" : <img height="40px" src="/elan-logo.png" />}
-            </a>
+            <span className="nav-link text-center">
+              {props.currentSlideIndex === 0 ? (
+                "ELAN Berlin"
+              ) : (
+                <img height="40px" src="/assets/logo.svg" />
+              )}
+            </span>
           </li>
         </span>
-        <span className={headerSectionStyle}>{headerItems}</span>
+        <span className={headerSectionStyle}>{renderHeaderItems(props.currentSlideIndex)}</span>
       </ul>
     </div>
   );

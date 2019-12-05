@@ -6,7 +6,6 @@ import { routes } from "../App";
 import VerticalBar from "./VerticalBar";
 
 interface INavItemProps {
-  link: string;
   index: number;
   active: boolean;
   onClick: () => void;

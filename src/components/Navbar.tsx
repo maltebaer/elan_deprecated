@@ -23,7 +23,6 @@ const Navbar: React.FC<INavbarProps> = props => {
         active: currentSlideIndex === i,
         key: i,
         index: i,
-        link: route,
         onClick: () => props.scrollToSlide(i)
       };
       navItems.push(<NavItem {...navItemProps} />);
