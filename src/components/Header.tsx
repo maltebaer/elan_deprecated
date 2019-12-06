@@ -37,7 +37,11 @@ const Header: React.FC<IHeaderProps> = (props) => {
             <ul className="h-100 nav d-flex justify-content-between">
                 <span className={headerSectionStyle}>
                     <li className="HeaderItem">
-                        <span className="nav-link text-center">
+                        <span
+                            className="nav-link text-center"
+                            style={{cursor: "pointer"}}
+                            onClick={() => props.onClick(0)}
+                        >
                             {props.currentSlideIndex === 0 ? (
                                 "ELAN Berlin"
                             ) : (

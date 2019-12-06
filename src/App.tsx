@@ -6,6 +6,7 @@ import {FullPage, Slide} from "react-full-page";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import Home from "./components/pages/Home";
 
 export const routes = ["home", "what-we-do", "work", "our-network", "about"];
 
@@ -42,7 +43,7 @@ const App: React.FC = () => {
                 afterChange={onAfterChange}
             >
                 <Slide id={"home"}>
-                    <h1>HOME</h1>
+                    <Home />
                 </Slide>
                 <Slide id={"what-we-do"}>
                     <h1>WHAT WE DO</h1>
