@@ -34,10 +34,7 @@ const Navbar: React.FC<INavbarProps> = (props) => {
     const currentSlideIndex = props.getCurrentSlideIndex();
 
     return (
-        <nav
-            // className="Navbar"
-            className="extra-padding vh-100 fixed-top d-flex justify-content-end align-items-center"
-        >
+        <nav className="Navbar vh-100 d-flex align-items-center">
             <ul className="nav d-flex flex-column d-inline-block">
                 {renderNavItems(currentSlideIndex)}
             </ul>
