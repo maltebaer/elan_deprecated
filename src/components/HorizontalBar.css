@@ -1,15 +1,15 @@
 .HorizontalBar {
-  width: 2vw;
+    width: 2vw;
 }
 
 .HorizontalBar .single {
-  width: 1vw;
+    width: 1vw;
 }
 
 .HorizontalBar .double {
-  width: 2vw;
+    width: 2vw;
 }
 
 .HorizontalBar > div {
-  height: 1px;
+    height: 1px;
 }

@@ -1,11 +1,11 @@
 .HeaderItem * {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .HeaderItem a {
-  color: black;
+    color: black;
 }
 
 .HeaderItem .active {
-  text-decoration: line-through;
+    text-decoration: line-through;
 }
