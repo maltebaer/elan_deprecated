@@ -1,5 +1,3 @@
-import "./HeaderItem.css";
-
 import React from "react";
 
 export interface IHeaderItemProps {
@@ -10,13 +8,13 @@ export interface IHeaderItemProps {
 }
 
 const HeaderItem: React.FC<IHeaderItemProps> = (props) => {
-    let className = "nav-link";
+    let className = "nav-link text-uppercase";
     if (props.active) {
-        className += " active";
+        className += " line-through";
     }
 
     return (
-        <li className="HeaderItem nav-item">
+        <li className="nav-item">
             <span
                 className={className}
                 style={{cursor: "pointer"}}

@@ -1,56 +1,59 @@
-import "./NavItem.css";
+import "./NavItem.scss";
 
 import React from "react";
 
-import { routes } from "../App";
+import {routes} from "../App";
 import VerticalBar from "./VerticalBar";
 
 interface INavItemProps {
-  index: number;
-  active: boolean;
-  onClick: () => void;
+    index: number;
+    active: boolean;
+    onClick: () => void;
 }
 
 const notFirst = (index: number) => {
-  if (index === 0) {
-    return false;
-  }
+    if (index === 0) {
+        return false;
+    }
 
-  return true;
+    return true;
 };
-
 const notLast = (index: number) => {
-  if (index === routes.length - 1) {
-    return false;
-  }
+    if (index === routes.length - 1) {
+        return false;
+    }
 
-  return true;
+    return true;
 };
 
-const NavItem: React.FC<INavItemProps> = props => {
-  let className = "nav-link text-center";
-  if (props.active) {
-    className += " active";
-  }
+const NavItem: React.FC<INavItemProps> = (props) => {
+    let className = "nav-link text-center";
+    if (props.active) {
+        className += " active";
+    }
 
-  const renderItems = [
-    <span className={className} style={{ cursor: "pointer" }} onClick={props.onClick}>
-      {"0" + (props.index + 1)}
-    </span>
-  ];
+    const renderItems = [
+        <span
+            className={className}
+            style={{cursor: "pointer"}}
+            onClick={props.onClick}
+        >
+            {"0" + (props.index + 1)}
+        </span>,
+    ];
 
-  if (props.active && notFirst(props.index) && notLast(props.index)) {
-    renderItems.unshift(<VerticalBar height="single" />);
-    renderItems.push(<VerticalBar height="single" />);
-  }
-  if (props.active && !notFirst(props.index)) {
-    renderItems.push(<VerticalBar height="double" />);
-  }
-  if (props.active && !notLast(props.index)) {
-    renderItems.unshift(<VerticalBar height="double" />);
-  }
+    if (props.active && notFirst(props.index) && notLast(props.index)) {
+        renderItems.unshift(<VerticalBar />);
+        renderItems.push(<VerticalBar />);
+    }
+    if (props.active && !notFirst(props.index)) {
+        renderItems.push(<VerticalBar large />);
+    }
+    if (props.active && !notLast(props.index)) {
+        renderItems.unshift(<VerticalBar large />);
+    }
 
-  return <li className={"NavItem"}>{renderItems}</li>;
+    return <li className={"NavItem"}>{renderItems}</li>;
 };
 
 export default NavItem;

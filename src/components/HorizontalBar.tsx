@@ -1,16 +1,19 @@
-import "./HorizontalBar.css";
+import "./HorizontalBar.scss";
 
 import React from "react";
 
 interface IHorizontalBarProps {
-    size: "single" | "double";
+    large?: boolean;
 }
 
 const HorizontalBar: React.FC<IHorizontalBarProps> = (props) => {
+    let className = "HorizontalBar d-flex flex-column justify-content-center";
+    if (props.large) {
+        className += " large";
+    }
+
     return (
-        <div
-            className={`HorizontalBar ${props.size} d-flex flex-column justify-content-center`}
-        >
+        <div className={className}>
             <div className="w-100 bg-dark" />
         </div>
     );

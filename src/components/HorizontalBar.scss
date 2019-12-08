@@ -1,0 +1,11 @@
+.HorizontalBar {
+    width: 1vw;
+
+    > div {
+        height: 1px;
+    }
+}
+
+.HorizontalBar.large {
+    width: 2vw;
+}

@@ -1,6 +1,3 @@
-import "./Header.css";
-import "./HeaderItem.css";
-
 import React from "react";
 
 import HeaderItem from "./HeaderItem";
@@ -33,12 +30,12 @@ const Header: React.FC<IHeaderProps> = (props) => {
     const headerSectionStyle = "d-flex align-items-center";
 
     return (
-        <div className="Header">
+        <div className="nav-height">
             <ul className="h-100 nav d-flex justify-content-between">
                 <span className={headerSectionStyle}>
-                    <li className="HeaderItem">
+                    <li>
                         <span
-                            className="nav-link text-center"
+                            className="nav-link text-uppercase"
                             style={{cursor: "pointer"}}
                             onClick={() => props.onClick(0)}
                         >

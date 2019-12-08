@@ -1,6 +1,8 @@
+@use "./src/index";
+
 .Navbar {
     display: inline;
     position: fixed;
     top: 0;
-    right: 5rem;
+    right: index.$big-spacer;
 }

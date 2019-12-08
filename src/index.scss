@@ -1,0 +1,31 @@
+$font-stack: Helvetica, Arial, sans-serif;
+
+@use "node_modules/bootstrap/scss/bootstrap" with (
+    $font-family-sans-serif: Roboto,
+    $font-size-base: 0.75rem,
+    $primary: black,
+);
+
+// variables
+$big-spacer: bootstrap.$spacer * 5;
+
+// customize
+.extra-padding {
+    padding: 0 $big-spacer;
+}
+
+.forground {
+    z-index: 1040;
+}
+
+.nav-height {
+    height: 7vh;
+}
+
+.fixed-width {
+    width: 25vw;
+}
+
+.line-through {
+    text-decoration: line-through;
+}

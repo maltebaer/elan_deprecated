@@ -1,16 +1,19 @@
-import "./VerticalBar.css";
+import "./VerticalBar.scss";
 
 import React from "react";
 
 interface IVerticalbarProps {
-    height: "single" | "double";
+    large?: boolean;
 }
 
 const VerticalBar: React.FC<IVerticalbarProps> = (props) => {
+    let className = "VerticalBar d-flex justify-content-center";
+    if (props.large) {
+        className += " large";
+    }
+
     return (
-        <div
-            className={`VerticalBar ${props.height} d-flex justify-content-center`}
-        >
+        <div className={className}>
             <div className="h-100 bg-dark" />
         </div>
     );

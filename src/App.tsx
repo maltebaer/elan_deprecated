@@ -1,5 +1,3 @@
-import "./App.css";
-
 import React, {useState, useEffect, useRef} from "react";
 import {FullPage, Slide} from "react-full-page";
 
@@ -58,7 +56,7 @@ const App: React.FC = () => {
     };
 
     return (
-        <div className="App container-fluid">
+        <div className="container-fluid">
             <div className="extra-padding forground fixed-top">
                 <Header
                     currentSlideIndex={currentSlideIndex}
