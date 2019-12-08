@@ -1,6 +1,6 @@
 import "./App.css";
 
-import React, {useState} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import {FullPage, Slide} from "react-full-page";
 
 import Header from "./components/Header";
@@ -16,9 +16,37 @@ interface ChangeObject {
 }
 
 const App: React.FC = () => {
-    const fullPageRef = React.createRef<any>();
+    const fullPageRef = useRef<any>();
 
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+    const onDown = (e: any) => {
+        switch (e.keyCode) {
+            case 38:
+                e.preventDefault();
+                if (currentSlideIndex - 1 >= 0) {
+                    onControlsClick(currentSlideIndex - 1);
+                }
+                return;
+
+            case 40:
+                e.preventDefault();
+                if (currentSlideIndex + 1 < routes.length) {
+                    onControlsClick(currentSlideIndex + 1);
+                }
+                return;
+
+            default:
+                return;
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener("keydown", onDown);
+        return () => {
+            document.removeEventListener("keydown", onDown);
+        };
+    });
 
     const onAfterChange = (changeObject: ChangeObject) => {
         window.location.hash = routes[changeObject.to];
