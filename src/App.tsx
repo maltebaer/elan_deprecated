@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Home from "./components/pages/Home";
+import About from "./components/pages/About";
 
 export const routes = ["home", "what-we-do", "work", "our-network", "about"];
 
@@ -81,7 +82,7 @@ const App: React.FC = () => {
                     <h1>OUR NETWORK</h1>
                 </Slide>
                 <Slide id={"about"}>
-                    <h1>ABOUT</h1>
+                    <About />
                 </Slide>
             </FullPage>
             <div className="extra-padding forground fixed-bottom">

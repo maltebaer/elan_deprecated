@@ -1,0 +1,26 @@
+.Portrait {
+    .zoom-container {
+        width: 15vw;
+        overflow: hidden;
+    }
+
+    img {
+        width: 100%;
+        align-self: start;
+        filter: grayscale(100%);
+
+        transition: transform 0.8s ease, filter 0.8s ease-in-out;
+    }
+
+    img:hover {
+        filter: none;
+
+        transform: scale(1.05);
+    }
+
+    .aside {
+        // display: inline-block;
+        transform-origin: 0% 0%;
+        transform: rotate(90deg);
+    }
+}

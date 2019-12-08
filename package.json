@@ -8,7 +8,9 @@
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.4",
     "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
     "lodash": "^4.17.15",
+    "popper.js": "^1.16.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-full-page": "^0.1.7",
@@ -39,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@types/jquery": "^3.3.31",
     "@types/lodash": "^4.14.147",
     "@types/react-router-dom": "^5.1.2",
     "@types/sass": "^1.16.0"
