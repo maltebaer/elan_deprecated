@@ -1,4 +1,5 @@
 import React from "react";
+
 import HorizontalBar from "./HorizontalBar";
 
 const Footer: React.FC = () => {

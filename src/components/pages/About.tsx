@@ -1,4 +1,5 @@
 import React from "react";
+
 import Portrait from "../Portrait";
 
 const About: React.FC = () => {

@@ -44,6 +44,9 @@
     "@types/jquery": "^3.3.31",
     "@types/lodash": "^4.14.147",
     "@types/react-router-dom": "^5.1.2",
-    "@types/sass": "^1.16.0"
+    "@types/sass": "^1.16.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.1.0"
   }
 }

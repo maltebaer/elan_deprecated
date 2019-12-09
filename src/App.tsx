@@ -1,15 +1,15 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {FullPage, Slide} from "react-full-page";
 
-import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 import Navbar from "./components/Navbar";
-import Home from "./components/pages/Home";
 import About from "./components/pages/About";
+import Home from "./components/pages/Home";
 
 export const routes = ["home", "what-we-do", "work", "our-network", "about"];
 
-interface ChangeObject {
+interface IChangeObject {
     from: number;
     to: number;
 }
@@ -47,7 +47,7 @@ const App: React.FC = () => {
         };
     });
 
-    const onAfterChange = (changeObject: ChangeObject) => {
+    const onAfterChange = (changeObject: IChangeObject) => {
         window.location.hash = routes[changeObject.to];
         setCurrentSlideIndex(changeObject.to);
     };

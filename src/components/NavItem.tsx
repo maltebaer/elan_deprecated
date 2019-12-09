@@ -34,6 +34,7 @@ const NavItem: React.FC<INavItemProps> = (props) => {
 
     const renderItems = [
         <span
+            key={0}
             className={className}
             style={{cursor: "pointer"}}
             onClick={props.onClick}

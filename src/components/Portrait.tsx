@@ -32,7 +32,7 @@ const Portrait: React.FC<IPortraitProps> = (props) => {
                 <img
                     src={props.source}
                     alt={props.name}
-                    onClick={() => copyEmailAdress()}
+                    onClick={copyEmailAdress}
                 />
             </div>
         </div>

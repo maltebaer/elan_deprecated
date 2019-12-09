@@ -1,17 +1,19 @@
 import "./Navbar.scss";
 
 import React from "react";
+
 import {routes} from "../App";
 import NavItem from "./NavItem";
 
 interface INavbarProps {
     className?: string;
+    style?: CSSStyleSheet;
+
+    slidesCount: number;
+    scrollToSlide: (index: number) => void;
     getCurrentSlideIndex: () => number;
     onNext: () => void;
     onPrev: () => void;
-    scrollToSlide: (index: number) => void;
-    slidesCount: number;
-    style?: CSSStyleSheet;
 }
 
 const Navbar: React.FC<INavbarProps> = (props) => {
@@ -21,8 +23,8 @@ const Navbar: React.FC<INavbarProps> = (props) => {
         routes.forEach((_, i) => {
             const navItemProps = {
                 active: currentSlideIndex === i,
-                key: i,
                 index: i,
+                key: i,
                 onClick: () => props.scrollToSlide(i),
             };
             navItems.push(<NavItem {...navItemProps} />);
@@ -31,12 +33,10 @@ const Navbar: React.FC<INavbarProps> = (props) => {
         return navItems;
     };
 
-    const currentSlideIndex = props.getCurrentSlideIndex();
-
     return (
         <nav className="Navbar vh-100 d-flex align-items-center">
             <ul className="nav d-flex flex-column d-inline-block">
-                {renderNavItems(currentSlideIndex)}
+                {renderNavItems(props.getCurrentSlideIndex())}
             </ul>
         </nav>
     );

@@ -1,7 +1,7 @@
 import React from "react";
 
-import HeaderItem from "./HeaderItem";
 import {routes} from "../App";
+import HeaderItem from "./HeaderItem";
 
 interface IHeaderProps {
     currentSlideIndex: number;
@@ -15,8 +15,8 @@ const Header: React.FC<IHeaderProps> = (props) => {
         routes.slice(1).forEach((route, i) => {
             const headerItemProps = {
                 active: currentSlideIndex === i + 1,
-                key: i,
                 index: i,
+                key: i,
                 link: route,
                 onClick: () => props.onClick(i + 1),
             };
@@ -37,6 +37,7 @@ const Header: React.FC<IHeaderProps> = (props) => {
                         <span
                             className="nav-link text-uppercase"
                             style={{cursor: "pointer"}}
+                            // tslint:disable-next-line: jsx-no-lambda
                             onClick={() => props.onClick(0)}
                         >
                             {props.currentSlideIndex === 0 ? (
