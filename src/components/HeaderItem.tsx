@@ -8,18 +8,14 @@ export interface IHeaderItemProps {
 }
 
 const HeaderItem: React.FC<IHeaderItemProps> = (props) => {
-    let className = "nav-link text-uppercase";
+    let className = "cursor-pointer nav-link text-uppercase";
     if (props.active) {
         className += " line-through";
     }
 
     return (
         <li className="nav-item">
-            <span
-                className={className}
-                style={{cursor: "pointer"}}
-                onClick={props.onClick}
-            >
+            <span className={className} onClick={props.onClick}>
                 {props.link.replace(/-/g, " ")}
             </span>
         </li>

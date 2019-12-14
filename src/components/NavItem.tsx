@@ -27,18 +27,13 @@ const notLast = (index: number) => {
 };
 
 const NavItem: React.FC<INavItemProps> = (props) => {
-    let className = "nav-link text-center";
+    let className = "cursor-pointer nav-link text-center";
     if (props.active) {
         className += " active";
     }
 
     const renderItems = [
-        <span
-            key={0}
-            className={className}
-            style={{cursor: "pointer"}}
-            onClick={props.onClick}
-        >
+        <span key={0} className={className} onClick={props.onClick}>
             {"0" + (props.index + 1)}
         </span>,
     ];

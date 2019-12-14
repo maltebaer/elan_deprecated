@@ -1,3 +1,5 @@
+@use "./src/index";
+
 .Portrait {
     .zoom-container {
         width: 15vw;
@@ -19,8 +21,21 @@
     }
 
     .aside {
-        // display: inline-block;
-        transform-origin: 0% 0%;
+        // m-2 + line-height name
+        padding-top: calc(0.5 * 1rem + 18px);
+        width: 18px;
+
+        div {
+            text-decoration: underline;
+        }
+    }
+
+    .rotated {
         transform: rotate(90deg);
+    }
+
+    .negative-rotated {
+        // TODO: update translate
+        transform: rotate(-90deg) translate(-108px);
     }
 }

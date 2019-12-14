@@ -5,6 +5,7 @@ $font-stack: Helvetica, Arial, sans-serif;
     $font-size-base: 0.75rem,
     $primary: black,
 );
+@forward "node_modules/bootstrap/scss/bootstrap";
 
 // variables
 $big-spacer: bootstrap.$spacer * 5;
@@ -28,4 +29,8 @@ $big-spacer: bootstrap.$spacer * 5;
 
 .line-through {
     text-decoration: line-through;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
