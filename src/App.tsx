@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import About from "./components/pages/About";
 import Home from "./components/pages/Home";
+import WhatWeDo from "./components/pages/WhatWeDo";
 
 export const routes = ["home", "what-we-do", "work", "our-network", "about"];
 
@@ -58,7 +59,7 @@ const App: React.FC = () => {
 
     return (
         <div className="container-fluid">
-            <div className="extra-padding forground fixed-top">
+            <div className="padding-x forground fixed-top">
                 <Header
                     currentSlideIndex={currentSlideIndex}
                     onClick={onControlsClick}
@@ -73,7 +74,7 @@ const App: React.FC = () => {
                     <Home />
                 </Slide>
                 <Slide id={"what-we-do"}>
-                    <h1>WHAT WE DO</h1>
+                    <WhatWeDo />
                 </Slide>
                 <Slide id={"work"}>
                     <h1>WORK</h1>
@@ -85,7 +86,7 @@ const App: React.FC = () => {
                     <About />
                 </Slide>
             </FullPage>
-            <div className="extra-padding forground fixed-bottom">
+            <div className="padding-x forground fixed-bottom">
                 <Footer />
             </div>
         </div>

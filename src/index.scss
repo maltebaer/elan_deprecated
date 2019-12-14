@@ -11,7 +11,7 @@ $font-stack: Helvetica, Arial, sans-serif;
 $big-spacer: bootstrap.$spacer * 5;
 
 // customize
-.extra-padding {
+.padding-x {
     padding: 0 $big-spacer;
 }
 
@@ -31,6 +31,6 @@ $big-spacer: bootstrap.$spacer * 5;
     text-decoration: line-through;
 }
 
-.cursor-pointer {
-    cursor: pointer;
+.info {
+    padding-top: 10rem;
 }

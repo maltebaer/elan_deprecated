@@ -22,6 +22,7 @@
 
 ### misc ###
 - refactor HeaderItem and reuse in Header
+- combine classes
 
 ### bugs ###
 - resolve typescript looking for node modules type definitions
