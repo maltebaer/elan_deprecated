@@ -2,15 +2,20 @@ import React from "react";
 
 interface IPageProps {
     title: string;
-    className: string;
+    className?: string;
     aside: JSX.Element;
     main: JSX.Element;
 }
 
 const Page: React.FC<IPageProps> = (props) => {
+    let className = "padding-x h-100 row";
+    if (props.className) {
+        className += " " + props.className;
+    }
+
     return (
-        <div className={`padding-x h-100 row ${props.className}`}>
-            <div className="col-3 info">
+        <div className={className}>
+            <div className="col-12 col-md-3 info">
                 <div>
                     <div className="mb-5 text-uppercase line-through">
                         {props.title}

@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import About from "./components/pages/About";
 import Home from "./components/pages/Home";
 import WhatWeDo from "./components/pages/WhatWeDo";
+import Work from "./components/pages/Work";
 
 export const routes = ["home", "what-we-do", "work", "our-network", "about"];
 
@@ -77,7 +78,7 @@ const App: React.FC = () => {
                     <WhatWeDo />
                 </Slide>
                 <Slide id={"work"}>
-                    <h1>WORK</h1>
+                    <Work />
                 </Slide>
                 <Slide id={"our-network"}>
                     <h1>OUR NETWORK</h1>
