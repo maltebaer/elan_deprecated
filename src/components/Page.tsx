@@ -1,4 +1,5 @@
 import React from "react";
+import {isMobile} from "react-device-detect";
 
 interface IPageProps {
     title: string;
@@ -8,7 +9,10 @@ interface IPageProps {
 }
 
 const Page: React.FC<IPageProps> = (props) => {
-    let className = "padding-x h-100 row";
+    let className = "row";
+    if (!isMobile) {
+        className += " padding-x h-100";
+    }
     if (props.className) {
         className += " " + props.className;
     }
