@@ -9,6 +9,7 @@ import Home from "./components/pages/Home";
 import WhatWeDo from "./components/pages/WhatWeDo";
 import Work from "./components/pages/Work";
 import {isMobile} from "react-device-detect";
+import OurNetwork from "./components/pages/OurNetwork";
 
 export const routes = ["home", "what-we-do", "work", "our-network", "about"];
 
@@ -84,7 +85,7 @@ const App: React.FC = () => {
                             <Work />
                         </Slide>
                         <Slide id={"our-network"}>
-                            <h1>OUR NETWORK</h1>
+                            <OurNetwork />
                         </Slide>
                         <Slide id={"about"}>
                             <About />
@@ -106,7 +107,7 @@ const App: React.FC = () => {
                         <Work />
                     </div>
                     <div id={"our-network"}>
-                        <h1>OUR NETWORK</h1>
+                        <OurNetwork />
                     </div>
                     <div id={"about"}>
                         <About />

@@ -1,16 +1,34 @@
 $font-stack: Helvetica, Arial, sans-serif;
+$primary: black;
 
-@use "node_modules/bootstrap/scss/bootstrap" with (
-    $font-family-sans-serif: Roboto,
-    $font-size-base: 0.75rem,
-    $primary: black,
-);
+@use "node_modules/bootstrap/scss/bootstrap" with
+        (
+            $font-family-sans-serif: Roboto,
+            $font-size-base: 0.75rem,
+            $primary: black,
+        );
 @forward "node_modules/bootstrap/scss/bootstrap";
 
 // variables
 $big-spacer: bootstrap.$spacer * 5;
 
 // customize
+.form-control {
+    border: 1px solid black;
+    border-radius: 0;
+    // color: $primary;
+}
+
+.form-control::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $primary;
+    opacity: 1; /* Firefox */
+}
+
+.btn {
+    border-radius: 0;
+}
+
 .padding-x {
     padding: 0 $big-spacer;
 }
