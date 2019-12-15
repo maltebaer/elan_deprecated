@@ -1,6 +1,7 @@
 import "./Navbar.scss";
 
 import React from "react";
+import {isMobile} from "react-device-detect";
 
 import {routes} from "../App";
 import NavItem from "./NavItem";
@@ -33,13 +34,20 @@ const Navbar: React.FC<INavbarProps> = (props) => {
         return navItems;
     };
 
-    return (
-        <nav className="Navbar vh-100 d-flex align-items-center">
-            <ul className="nav d-flex flex-column d-inline-block">
-                {renderNavItems(props.getCurrentSlideIndex())}
-            </ul>
-        </nav>
-    );
+    const render = () => {
+        if (!isMobile) {
+            return (
+                <nav className="Navbar vh-100 d-flex align-items-center">
+                    <ul className="nav d-flex flex-column d-inline-block">
+                        {renderNavItems(props.getCurrentSlideIndex())}
+                    </ul>
+                </nav>
+            );
+        }
+        return null;
+    };
+
+    return render();
 };
 
 export default Navbar;

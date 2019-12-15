@@ -8,6 +8,7 @@ import About from "./components/pages/About";
 import Home from "./components/pages/Home";
 import WhatWeDo from "./components/pages/WhatWeDo";
 import Work from "./components/pages/Work";
+import {isMobile} from "react-device-detect";
 
 export const routes = ["home", "what-we-do", "work", "our-network", "about"];
 
@@ -60,36 +61,58 @@ const App: React.FC = () => {
 
     return (
         <div className="container-fluid">
-            <div className="padding-x forground fixed-top">
-                <Header
-                    currentSlideIndex={currentSlideIndex}
-                    onClick={onControlsClick}
-                />
-            </div>
-            <FullPage
-                ref={fullPageRef}
-                controls={Navbar}
-                afterChange={onAfterChange}
-            >
-                <Slide id={"home"}>
-                    <Home />
-                </Slide>
-                <Slide id={"what-we-do"}>
-                    <WhatWeDo />
-                </Slide>
-                <Slide id={"work"}>
-                    <Work />
-                </Slide>
-                <Slide id={"our-network"}>
-                    <h1>OUR NETWORK</h1>
-                </Slide>
-                <Slide id={"about"}>
-                    <About />
-                </Slide>
-            </FullPage>
-            <div className="padding-x forground fixed-bottom">
-                <Footer />
-            </div>
+            {!isMobile ? (
+                <React.Fragment>
+                    <div className="padding-x forground fixed-top">
+                        <Header
+                            currentSlideIndex={currentSlideIndex}
+                            onClick={onControlsClick}
+                        />
+                    </div>
+                    <FullPage
+                        ref={fullPageRef}
+                        controls={Navbar}
+                        afterChange={onAfterChange}
+                    >
+                        <Slide id={"home"}>
+                            <Home />
+                        </Slide>
+                        <Slide id={"what-we-do"}>
+                            <WhatWeDo />
+                        </Slide>
+                        <Slide id={"work"}>
+                            <Work />
+                        </Slide>
+                        <Slide id={"our-network"}>
+                            <h1>OUR NETWORK</h1>
+                        </Slide>
+                        <Slide id={"about"}>
+                            <About />
+                        </Slide>
+                    </FullPage>
+                    <div className="padding-x forground fixed-bottom">
+                        <Footer />
+                    </div>
+                </React.Fragment>
+            ) : (
+                <React.Fragment>
+                    <div id={"home"}>
+                        <Home />
+                    </div>
+                    <div id={"what-we-do"}>
+                        <WhatWeDo />
+                    </div>
+                    <div id={"work"}>
+                        <Work />
+                    </div>
+                    <div id={"our-network"}>
+                        <h1>OUR NETWORK</h1>
+                    </div>
+                    <div id={"about"}>
+                        <About />
+                    </div>
+                </React.Fragment>
+            )}
         </div>
     );
 };

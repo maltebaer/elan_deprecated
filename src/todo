@@ -1,5 +1,4 @@
 ### general ###
-- page component?
 
 ## home ##
 - logo
@@ -18,13 +17,11 @@
 
 ## about ##
 - portraits
-  - hover effect
 
 ### misc ###
 - refactor HeaderItem and reuse in Header
 - combine classes
 
 ### bugs ###
-- resolve typescript looking for node modules type definitions
-
+- slow hash update
 - url without hash
