@@ -2,7 +2,6 @@ import React from "react";
 
 import {routes} from "../App";
 import HeaderItem from "./HeaderItem";
-import {isMobile} from "react-device-detect";
 
 interface IHeaderProps {
     currentSlideIndex: number;
@@ -30,41 +29,34 @@ const Header: React.FC<IHeaderProps> = (props) => {
 
     const headerSectionStyle = "d-flex align-items-center";
 
-    const render = () => {
-        if (!isMobile) {
-            return (
-                <div className="nav-height">
-                    <ul className="h-100 nav d-flex justify-content-between">
-                        <span className={headerSectionStyle}>
-                            <li>
-                                <span
-                                    className="cursor-pointer nav-link text-uppercase"
-                                    // tslint:disable-next-line: jsx-no-lambda
-                                    onClick={() => props.onClick(0)}
-                                >
-                                    {props.currentSlideIndex === 0 ? (
-                                        "ELAN Berlin"
-                                    ) : (
-                                        <img
-                                            height="40px"
-                                            src="/assets/logo.svg"
-                                            alt="logo"
-                                        />
-                                    )}
-                                </span>
-                            </li>
+    return (
+        <div className="nav-height">
+            <ul className="h-100 nav d-flex justify-content-between">
+                <span className={headerSectionStyle}>
+                    <li>
+                        <span
+                            className="cursor-pointer nav-link text-uppercase"
+                            // tslint:disable-next-line: jsx-no-lambda
+                            onClick={() => props.onClick(0)}
+                        >
+                            {props.currentSlideIndex === 0 ? (
+                                "ELAN Berlin"
+                            ) : (
+                                <img
+                                    height="40px"
+                                    src="/assets/logo.svg"
+                                    alt="logo"
+                                />
+                            )}
                         </span>
-                        <span className={headerSectionStyle}>
-                            {renderHeaderItems(props.currentSlideIndex)}
-                        </span>
-                    </ul>
-                </div>
-            );
-        }
-        return null;
-    };
-
-    return render();
+                    </li>
+                </span>
+                <span className={headerSectionStyle}>
+                    {renderHeaderItems(props.currentSlideIndex)}
+                </span>
+            </ul>
+        </div>
+    );
 };
 
 export default Header;

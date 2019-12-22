@@ -33,6 +33,10 @@ $big-spacer: bootstrap.$spacer * 5;
     padding: 0 $big-spacer;
 }
 
+.margin-y {
+    margin: bootstrap.$spacer 0;
+}
+
 .forground {
     z-index: 1040;
 }
@@ -55,4 +59,11 @@ $big-spacer: bootstrap.$spacer * 5;
 
 .info {
     padding-top: 10rem;
+}
+
+@include bootstrap.media-breakpoint-down(sm) {
+    .info {
+        padding-top: 0;
+        margin-top: 5rem;
+    }
 }

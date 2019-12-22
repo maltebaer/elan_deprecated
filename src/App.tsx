@@ -10,6 +10,9 @@ import WhatWeDo from "./components/pages/WhatWeDo";
 import Work from "./components/pages/Work";
 import {isMobile} from "react-device-detect";
 import OurNetwork from "./components/pages/OurNetwork";
+import MobileHeader from "./components/MobileHeader";
+import GoDown from "./components/GoDown";
+import MobileFooter from "./components/MobileFooter";
 
 export const routes = ["home", "what-we-do", "work", "our-network", "about"];
 
@@ -64,7 +67,7 @@ const App: React.FC = () => {
         <div className="container-fluid">
             {!isMobile ? (
                 <React.Fragment>
-                    <div className="padding-x forground fixed-top">
+                    <div className="margin-y padding-x fixed-top">
                         <Header
                             currentSlideIndex={currentSlideIndex}
                             onClick={onControlsClick}
@@ -91,14 +94,18 @@ const App: React.FC = () => {
                             <About />
                         </Slide>
                     </FullPage>
-                    <div className="padding-x forground fixed-bottom">
+                    <div className="margin-y padding-x fixed-bottom">
                         <Footer />
                     </div>
                 </React.Fragment>
             ) : (
                 <React.Fragment>
-                    <div id={"home"}>
-                        <Home />
+                    <div className="vh-100 d-flex flex-column justify-content-between">
+                        <MobileHeader />
+                        <div id={"home"}>
+                            <Home />
+                        </div>
+                        <GoDown />
                     </div>
                     <div id={"what-we-do"}>
                         <WhatWeDo />

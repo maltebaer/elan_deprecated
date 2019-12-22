@@ -1,6 +1,16 @@
+@use "./src/index";
+
 .WhatWeDo {
     img {
         padding-right: 5rem;
-        height: 65vh;
+        // height: 65vh;
+        width: 100%;
+    }
+
+    @include index.media-breakpoint-down(sm) {
+        img {
+            padding-right: 0;
+            margin-right: -15px;
+        }
     }
 }

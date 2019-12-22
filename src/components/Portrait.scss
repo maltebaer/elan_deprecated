@@ -38,4 +38,10 @@
         // TODO: update translate
         transform: rotate(-90deg) translate(-108px);
     }
+
+    @include index.media-breakpoint-down(sm) {
+        .zoom-container {
+            width: 40vw;
+        }
+    }
 }

@@ -1,6 +1,7 @@
 @use "./src/index";
 
 .Navbar {
+    z-index: 1000;
     display: inline;
     position: fixed;
     top: 0;

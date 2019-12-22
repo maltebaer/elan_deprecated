@@ -1,9 +1,11 @@
 import "./About.scss";
 
 import React from "react";
+import {isMobile} from "react-device-detect";
 
 import Page from "../Page";
 import Portrait from "../Portrait";
+import MobileFooter from "../MobileFooter";
 
 const About: React.FC = () => {
     return <Page title="About" className="About" aside={Aside} main={Main} />;
@@ -34,24 +36,31 @@ const Aside = (
 );
 
 const Main = (
-    <div className="d-flex h-100 justify-content-center align-items-center">
-        <div className="p-3 higher">
-            <Portrait
-                name="Raquel Fedato"
-                email="raquel@elanberlin.com"
-                source="/assets/raquel.png"
-                alignment="left"
-            />
+    <React.Fragment>
+        <div
+            className={`d-flex h-100 justify-content-${
+                isMobile ? "between" : "center"
+            } align-items-center`}
+        >
+            <div className="pr-3 higher">
+                <Portrait
+                    name="Raquel Fedato"
+                    email="raquel@elanberlin.com"
+                    source="/assets/raquel.png"
+                    alignment="left"
+                />
+            </div>
+            <div className="pl-3 lower">
+                <Portrait
+                    name="Ricardo Oswald"
+                    email="ricardo@elanberlin.com"
+                    source="/assets/ricardo.png"
+                    alignment="right"
+                />
+            </div>
         </div>
-        <div className="p-3 lower">
-            <Portrait
-                name="Ricardo Oswald"
-                email="ricardo@elanberlin.com"
-                source="/assets/ricardo.png"
-                alignment="right"
-            />
-        </div>
-    </div>
+        <MobileFooter />
+    </React.Fragment>
 );
 
 export default About;
