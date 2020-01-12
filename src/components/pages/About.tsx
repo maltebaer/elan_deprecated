@@ -3,9 +3,9 @@ import "./About.scss";
 import React from "react";
 import {isMobile} from "react-device-detect";
 
+import MobileFooter from "../MobileFooter";
 import Page from "../Page";
 import Portrait from "../Portrait";
-import MobileFooter from "../MobileFooter";
 
 const About: React.FC = () => {
     return <Page title="About" className="About" aside={Aside} main={Main} />;
@@ -59,7 +59,7 @@ const Main = (
                 />
             </div>
         </div>
-        <MobileFooter />
+        {isMobile && <MobileFooter />}
     </React.Fragment>
 );
 

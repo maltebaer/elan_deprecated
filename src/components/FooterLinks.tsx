@@ -1,29 +1,35 @@
 import React from "react";
+import {isMobile} from "react-device-detect";
 
 import HorizontalBar from "./HorizontalBar";
 
 const FooterLinks: React.FC = () => {
+    let className = "footer-item";
+    if (isMobile) {
+        className += " small";
+    }
+
     return (
         <React.Fragment>
-            <span className="footer-item">
+            <span className={className}>
                 <a href="#" className="nav-link">
                     Facebook
                 </a>
             </span>
             <HorizontalBar large />
-            <span className="footer-item">
+            <span className={className}>
                 <a href="#" className="nav-link">
                     Instagram
                 </a>
             </span>
             <HorizontalBar large />
-            <span className="footer-item">
+            <span className={className}>
                 <a href="#" className="nav-link">
                     YouTube
                 </a>
             </span>
             <HorizontalBar large />
-            <span className="footer-item">
+            <span className={className}>
                 <a href="#" className="nav-link">
                     Twitter
                 </a>

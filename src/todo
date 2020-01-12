@@ -1,22 +1,24 @@
 ### general ###
 
 ## home ##
-- logo
-  - with mouse effect
+- mobile: fix vh-100
 
 ## what we do ##
-- accordion component?
+- overflow
 
 ## work ##
 - showcase component
 
 ## our network ##
 - form
+    - logic
 - random images
-  - instagram api
+    - instagram api
 
 ## about ##
-- portraits
+- email onClick --> clipboard and popup
+- image onclick --> linkedin
+
 
 ### misc ###
 - refactor HeaderItem and reuse in Header
@@ -25,3 +27,4 @@
 ### bugs ###
 - slow hash update
 - url without hash
+- sass use syntax loading bug

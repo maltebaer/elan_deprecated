@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import "bootstrap/js/dist/collapse";
 import "./index.scss";
 // import "bootstrap/js/dist/tooltip";
 

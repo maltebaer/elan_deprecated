@@ -1,0 +1,18 @@
+.Accordion {
+    margin-bottom: 1rem;
+
+    a {
+        font-style: italic;
+        text-decoration: underline;
+    }
+
+    ul {
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
+    ul li {
+        display: inline;
+        list-style: none;
+    }
+}

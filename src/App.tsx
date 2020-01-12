@@ -1,18 +1,17 @@
 import React, {useEffect, useRef, useState} from "react";
+import {isMobile} from "react-device-detect";
 import {FullPage, Slide} from "react-full-page";
 
 import Footer from "./components/Footer";
+import GoDown from "./components/GoDown";
 import Header from "./components/Header";
+import MobileHeader from "./components/MobileHeader";
 import Navbar from "./components/Navbar";
 import About from "./components/pages/About";
 import Home from "./components/pages/Home";
+import OurNetwork from "./components/pages/OurNetwork";
 import WhatWeDo from "./components/pages/WhatWeDo";
 import Work from "./components/pages/Work";
-import {isMobile} from "react-device-detect";
-import OurNetwork from "./components/pages/OurNetwork";
-import MobileHeader from "./components/MobileHeader";
-import GoDown from "./components/GoDown";
-import MobileFooter from "./components/MobileFooter";
 
 export const routes = ["home", "what-we-do", "work", "our-network", "about"];
 
@@ -28,14 +27,14 @@ const App: React.FC = () => {
 
     const onDown = (e: any) => {
         switch (e.keyCode) {
-            case 38:
+            case 38: // down
                 e.preventDefault();
                 if (currentSlideIndex - 1 >= 0) {
                     onControlsClick(currentSlideIndex - 1);
                 }
                 return;
 
-            case 40:
+            case 40: // up
                 e.preventDefault();
                 if (currentSlideIndex + 1 < routes.length) {
                     onControlsClick(currentSlideIndex + 1);
@@ -67,12 +66,10 @@ const App: React.FC = () => {
         <div className="container-fluid">
             {!isMobile ? (
                 <React.Fragment>
-                    <div className="margin-y padding-x fixed-top">
-                        <Header
-                            currentSlideIndex={currentSlideIndex}
-                            onClick={onControlsClick}
-                        />
-                    </div>
+                    <Header
+                        currentSlideIndex={currentSlideIndex}
+                        onClick={onControlsClick}
+                    />
                     <FullPage
                         ref={fullPageRef}
                         controls={Navbar}
@@ -94,9 +91,7 @@ const App: React.FC = () => {
                             <About />
                         </Slide>
                     </FullPage>
-                    <div className="margin-y padding-x fixed-bottom">
-                        <Footer />
-                    </div>
+                    <Footer />
                 </React.Fragment>
             ) : (
                 <React.Fragment>

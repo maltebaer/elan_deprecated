@@ -6,7 +6,7 @@ import FooterMail from "./FooterMail";
 
 const Footer: React.FC = () => {
     return (
-        <div className="nav-height">
+        <div className="margin-y padding-x nav-height fixed-bottom">
             <div className="h-100 nav d-flex justify-content-between">
                 <span className="fixed-width d-flex align-items-center">
                     <FooterMail />

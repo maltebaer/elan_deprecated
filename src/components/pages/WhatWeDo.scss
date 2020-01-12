@@ -3,8 +3,7 @@
 .WhatWeDo {
     img {
         padding-right: 5rem;
-        // height: 65vh;
-        width: 100%;
+        width: 85%;
     }
 
     @include index.media-breakpoint-down(sm) {
