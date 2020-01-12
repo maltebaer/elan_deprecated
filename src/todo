@@ -11,7 +11,8 @@
 
 ## our network ##
 - form
-    - weird invalid email errror
+    - weird invalid email error
+    - check email send feedback on phone
 - random images
     - instagram api
 
@@ -28,3 +29,5 @@
 - slow hash update
 - url without hash
 - sass use syntax loading bug
+- two page scrolling on mac
+- header jump when logo is displayed on mac
