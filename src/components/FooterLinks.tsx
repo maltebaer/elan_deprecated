@@ -22,18 +22,6 @@ const FooterLinks: React.FC = () => {
                     Instagram
                 </a>
             </span>
-            <HorizontalBar large />
-            <span className={className}>
-                <a href="#" className="nav-link">
-                    YouTube
-                </a>
-            </span>
-            <HorizontalBar large />
-            <span className={className}>
-                <a href="#" className="nav-link">
-                    Twitter
-                </a>
-            </span>
         </React.Fragment>
     );
 };

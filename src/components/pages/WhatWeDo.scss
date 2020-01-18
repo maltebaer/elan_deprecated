@@ -2,14 +2,6 @@
 
 .WhatWeDo {
     img {
-        padding-right: 5rem;
         width: 85%;
-    }
-
-    @include index.media-breakpoint-down(sm) {
-        img {
-            padding-right: 0;
-            margin-right: -15px;
-        }
     }
 }

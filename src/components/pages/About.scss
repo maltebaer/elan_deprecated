@@ -1,21 +1,11 @@
 @use "./src/index";
 
 .About {
-    background-image: url("/assets/holo");
-    background-size: 40% 50%;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-
     .higher {
         margin-top: -3rem;
     }
 
     .lower {
         margin-top: 3rem;
-    }
-
-    @include index.media-breakpoint-down(sm) {
-        background-size: 70% 20%;
-        background-position: left bottom;
     }
 }

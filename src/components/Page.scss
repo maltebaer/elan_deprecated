@@ -4,13 +4,21 @@
     height: 100vh;
     padding: 0 index.$big-spacer;
 
-    .page-container {
+    .aside-container {
         height: 100%;
         padding: 10rem 0 5rem;
     }
 
+    .main-container {
+        height: 100%;
+        padding-top: 10rem;
+        padding-bottom: 5rem;
+        padding-left: 10rem;
+    }
+
     .aside-limiter {
         height: 100%;
+        overflow: hidden;
     }
 
     .main-limiter {
@@ -18,17 +26,32 @@
         width: 90%;
     }
 
+    &.bg-about {
+        background-image: url("/assets/holo");
+        background-size: 40% 50%;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+    }
+
     @include index.media-breakpoint-down(md) {
         height: 100%;
         padding: 0 15px;
 
-        .page-container {
+        .aside-container {
             padding: 0;
+        }
+        .main-container {
+            padding: 0;
+        }
+        &.bg-about {
+            background-size: 70% 20%;
+            background-position: left 80%;
         }
     }
     @include index.media-breakpoint-down(lg) {
         .main-limiter {
             width: 100%;
+            margin-bottom: 5rem;
         }
     }
 }

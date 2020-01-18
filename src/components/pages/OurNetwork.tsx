@@ -7,7 +7,7 @@ import Page from "../Page";
 const OurNetwork: React.FC = () => {
     return (
         <Page title="Our network" aside={Aside}>
-            {Main};
+            {Main}
         </Page>
     );
 };
@@ -15,7 +15,7 @@ const OurNetwork: React.FC = () => {
 const Aside = <ContactForm />;
 
 const Main = (
-    <div className="h-100 d-flex flex-colunm justify-content-center align-items-center">
+    <div className="h-100">
         <Instagram />
     </div>
 );

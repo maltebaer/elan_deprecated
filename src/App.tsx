@@ -83,12 +83,12 @@ const App: React.FC = () => {
                         <Slide id={"work"}>
                             <Work />
                         </Slide>
-                        {/* <Slide id={"our-network"}>
+                        <Slide id={"our-network"}>
                             <OurNetwork />
                         </Slide>
                         <Slide id={"about"}>
                             <About />
-                        </Slide> */}
+                        </Slide>
                     </FullPage>
                     <Footer />
                 </React.Fragment>
@@ -106,12 +106,12 @@ const App: React.FC = () => {
                     <div id={"work"}>
                         <Work />
                     </div>
-                    {/* <div id={"our-network"}>
+                    <div id={"our-network"}>
                         <OurNetwork />
                     </div>
                     <div id={"about"}>
                         <About />
-                    </div> */}
+                    </div>
                 </React.Fragment>
             )}
         </div>
