@@ -8,7 +8,11 @@ import Page from "../Page";
 import Portrait from "../Portrait";
 
 const About: React.FC = () => {
-    return <Page title="About" className="About" aside={Aside} main={Main} />;
+    return (
+        <Page title="About" className="About" aside={Aside}>
+            {Main}
+        </Page>
+    );
 };
 
 const Aside = (

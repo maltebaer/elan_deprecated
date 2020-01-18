@@ -7,12 +7,9 @@ import Page from "../Page";
 
 const WhatWeDo: React.FC = () => {
     return (
-        <Page
-            title="What we do"
-            className="WhatWeDo"
-            aside={Aside}
-            main={Main}
-        />
+        <Page title="What we do" className="WhatWeDo" aside={Aside}>
+            {Main}
+        </Page>
     );
 };
 

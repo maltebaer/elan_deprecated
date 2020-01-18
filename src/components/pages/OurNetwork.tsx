@@ -5,7 +5,11 @@ import Instagram from "../Instagram";
 import Page from "../Page";
 
 const OurNetwork: React.FC = () => {
-    return <Page title="Our network" aside={Aside} main={Main} />;
+    return (
+        <Page title="Our network" aside={Aside}>
+            {Main};
+        </Page>
+    );
 };
 
 const Aside = <ContactForm />;

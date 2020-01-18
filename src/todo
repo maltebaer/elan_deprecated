@@ -20,6 +20,9 @@
 - email onClick --> clipboard and popup
 - image onclick --> linkedin
 
+### mobile ###
+- menu
+
 
 ### misc ###
 - refactor HeaderItem and reuse in Header

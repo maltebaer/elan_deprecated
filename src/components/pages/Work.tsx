@@ -1,9 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 
 import Page from "../Page";
+import Showcase from "../Showcase";
+import ShowcaseList from "../ShowcaseList";
 
 const Work: React.FC = () => {
-    return <Page title="Work" aside={Aside} main={Main} />;
+    return (
+        <Page title="Work" aside={Aside}>
+            <Main />
+        </Page>
+    );
 };
 
 const Aside = (
@@ -27,10 +33,27 @@ const Aside = (
     </React.Fragment>
 );
 
-const Main = (
-    <div className="h-100 d-flex flex-colunm justify-content-center align-items-center">
-        TODO: Showcase
-    </div>
-);
+const Main: React.FC = () => {
+    const [openModalId, setOpenModalId] = useState<number | null>(null);
+
+    const toggleModal = (id: number) => {
+        if (openModalId !== id) {
+            setOpenModalId(id);
+        } else {
+            setOpenModalId(null);
+        }
+    };
+
+    return (
+        <div className="h-100 info">
+            <Showcase clientId={1} modalIsOpen={openModalId === 1} />
+            <Showcase clientId={2} modalIsOpen={openModalId === 2} />
+            <Showcase clientId={3} modalIsOpen={openModalId === 3} />
+            <Showcase clientId={4} modalIsOpen={openModalId === 4} />
+            <Showcase clientId={5} modalIsOpen={openModalId === 5} />
+            <ShowcaseList openModalId={openModalId} toggleModal={toggleModal} />
+        </div>
+    );
+};
 
 export default Work;
