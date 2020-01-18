@@ -1,0 +1,34 @@
+@use "./src/index";
+
+.Page {
+    height: 100vh;
+    padding: 0 index.$big-spacer;
+
+    .page-container {
+        height: 100%;
+        padding: 10rem 0 5rem;
+    }
+
+    .aside-limiter {
+        height: 100%;
+    }
+
+    .main-limiter {
+        height: 100%;
+        width: 90%;
+    }
+
+    @include index.media-breakpoint-down(md) {
+        height: 100%;
+        padding: 0 15px;
+
+        .page-container {
+            padding: 0;
+        }
+    }
+    @include index.media-breakpoint-down(lg) {
+        .main-limiter {
+            width: 100%;
+        }
+    }
+}

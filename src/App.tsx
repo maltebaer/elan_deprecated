@@ -3,7 +3,6 @@ import {isMobile} from "react-device-detect";
 import {FullPage, Slide} from "react-full-page";
 
 import Footer from "./components/Footer";
-import GoDown from "./components/GoDown";
 import Header from "./components/Header";
 import MobileHeader from "./components/MobileHeader";
 import Navbar from "./components/Navbar";
@@ -84,12 +83,12 @@ const App: React.FC = () => {
                         <Slide id={"work"}>
                             <Work />
                         </Slide>
-                        <Slide id={"our-network"}>
+                        {/* <Slide id={"our-network"}>
                             <OurNetwork />
                         </Slide>
                         <Slide id={"about"}>
                             <About />
-                        </Slide>
+                        </Slide> */}
                     </FullPage>
                     <Footer />
                 </React.Fragment>
@@ -100,7 +99,6 @@ const App: React.FC = () => {
                         <div id={"home"}>
                             <Home />
                         </div>
-                        <GoDown />
                     </div>
                     <div id={"what-we-do"}>
                         <WhatWeDo />
@@ -108,12 +106,12 @@ const App: React.FC = () => {
                     <div id={"work"}>
                         <Work />
                     </div>
-                    <div id={"our-network"}>
+                    {/* <div id={"our-network"}>
                         <OurNetwork />
                     </div>
                     <div id={"about"}>
                         <About />
-                    </div>
+                    </div> */}
                 </React.Fragment>
             )}
         </div>

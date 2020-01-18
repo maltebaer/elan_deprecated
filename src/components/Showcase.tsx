@@ -4,7 +4,7 @@ import Carousel from "react-images";
 const images = [
     [
         {src: "/assets/work/c1-1.jpg"},
-        {src: "/assets/work/c1-2.jpg"},
+        {src: "/assets/work/c2-2.jpg"},
         {src: "/assets/work/c1-3.jpg"},
     ],
     [
@@ -51,9 +51,9 @@ const Showcase: React.FC<IShowcaseProps> = (props) => {
         <div style={{position: "relative"}}>
             <div
                 style={{
-                    backgroundColor: "red",
+                    // backgroundColor: "red",
                     // height: "500px",
-                    left: "10vh",
+                    left: "20vh",
                     position: "absolute",
                     // width: "100%",
                 }}

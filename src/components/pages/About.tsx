@@ -9,7 +9,7 @@ import Portrait from "../Portrait";
 
 const About: React.FC = () => {
     return (
-        <Page title="About" className="About" aside={Aside}>
+        <Page title="About" aside={Aside}>
             {Main}
         </Page>
     );
@@ -40,7 +40,7 @@ const Aside = (
 );
 
 const Main = (
-    <React.Fragment>
+    <div className="About">
         <div
             className={`d-flex h-100 justify-content-${
                 isMobile ? "between" : "center"
@@ -64,7 +64,7 @@ const Main = (
             </div>
         </div>
         {isMobile && <MobileFooter />}
-    </React.Fragment>
+    </div>
 );
 
 export default About;

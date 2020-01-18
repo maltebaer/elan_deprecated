@@ -13,24 +13,29 @@ const Work: React.FC = () => {
 };
 
 const Aside = (
-    <React.Fragment>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-            itaque dolores error sapiente eveniet doloribus culpa at nisi
-            corrupti vel veritatis eum quaerat qui ratione quidem, tenetur
-            laudantium autem? Maiores?
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-            itaque dolores error sapiente eveniet doloribus culpa at nisi
-            corrupti vel veritatis.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. At nisi
-            corrupti vel veritatis eum quaerat qui ratione quidem, tenetur
-            laudantium autem? Maiores?
-        </p>
-    </React.Fragment>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores fugit
+        fugiat cum sit! Ut molestiae eius, sunt aliquid animi quidem totam
+        soluta dolorum minima magni voluptas, ab id saepe quas.
+    </div>
+    // <React.Fragment>
+    //     <p>
+    //         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+    //         itaque dolores error sapiente eveniet doloribus culpa at nisi
+    //         corrupti vel veritatis eum quaerat qui ratione quidem, tenetur
+    //         laudantium autem? Maiores?
+    //     </p>
+    //     <p>
+    //         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+    //         itaque dolores error sapiente eveniet doloribus culpa at nisi
+    //         corrupti vel veritatis.
+    //     </p>
+    //     <p>
+    //         Lorem ipsum dolor sit amet consectetur adipisicing elit. At nisi
+    //         corrupti vel veritatis eum quaerat qui ratione quidem, tenetur
+    //         laudantium autem? Maiores?
+    //     </p>
+    // </React.Fragment>
 );
 
 const Main: React.FC = () => {
@@ -45,14 +50,25 @@ const Main: React.FC = () => {
     };
 
     return (
-        <div className="h-100 info">
-            <Showcase clientId={1} modalIsOpen={openModalId === 1} />
-            <Showcase clientId={2} modalIsOpen={openModalId === 2} />
-            <Showcase clientId={3} modalIsOpen={openModalId === 3} />
-            <Showcase clientId={4} modalIsOpen={openModalId === 4} />
-            <Showcase clientId={5} modalIsOpen={openModalId === 5} />
-            <ShowcaseList openModalId={openModalId} toggleModal={toggleModal} />
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ab,
+            soluta neque quis obcaecati qui fugiat ipsa repellendus ut molestiae
+            at error dolores molestias. Laudantium inventore nam nulla dicta
+            expedita!
+            <br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ab,
+            soluta neque quis obcaecati qui fugiat ipsa repellendus ut molestiae
+            at error dolores molestias. Laudantium inventore nam nulla dicta
+            expedita!
         </div>
+        // <div className="h-100">
+        //     <Showcase clientId={1} modalIsOpen={openModalId === 1} />
+        //     <Showcase clientId={2} modalIsOpen={openModalId === 2} />
+        //     <Showcase clientId={3} modalIsOpen={openModalId === 3} />
+        //     <Showcase clientId={4} modalIsOpen={openModalId === 4} />
+        //     <Showcase clientId={5} modalIsOpen={openModalId === 5} />
+        //     <ShowcaseList openModalId={openModalId} toggleModal={toggleModal} />
+        // </div>
     );
 };
 
