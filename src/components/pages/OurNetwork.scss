@@ -1,15 +1,7 @@
 @use "./src/index";
 
-.WhatWeDo {
-    img {
-        width: 85%;
-    }
-
+.OurNetwork {
     @include index.media-breakpoint-down(lg) {
         padding-bottom: 5rem;
-
-        img {
-            width: 100%;
-        }
     }
 }

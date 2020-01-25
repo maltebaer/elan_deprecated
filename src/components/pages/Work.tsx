@@ -1,3 +1,5 @@
+import "./Work.scss";
+
 import React, {useState} from "react";
 
 import Page from "../Page";
@@ -45,14 +47,14 @@ const Main: React.FC = () => {
     };
 
     return (
-        <React.Fragment>
+        <div className="Work">
             <Showcase clientId={1} modalIsOpen={openModalId === 1} />
             <Showcase clientId={2} modalIsOpen={openModalId === 2} />
             <Showcase clientId={3} modalIsOpen={openModalId === 3} />
             <Showcase clientId={4} modalIsOpen={openModalId === 4} />
             <Showcase clientId={5} modalIsOpen={openModalId === 5} />
             <ShowcaseList openModalId={openModalId} toggleModal={toggleModal} />
-        </React.Fragment>
+        </div>
     );
 };
 

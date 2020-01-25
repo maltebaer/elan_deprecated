@@ -1,7 +1,7 @@
 import "./About.scss";
 
 import React from "react";
-import {isIOS13, isMobile, isTablet} from "react-device-detect";
+import {isIOS13, isMobile, isTablet, isMobileOnly} from "react-device-detect";
 
 import MobileFooter from "../MobileFooter";
 import Page from "../Page";
@@ -43,7 +43,7 @@ const Main = (
     <div className="About">
         <div
             className={`d-flex justify-content-${
-                isMobile ? "between" : "center pt-5"
+                isMobileOnly ? "between" : "center pt-5"
             } align-items-center`}
         >
             <div className="pr-3 higher">

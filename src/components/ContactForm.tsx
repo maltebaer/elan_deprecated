@@ -1,5 +1,8 @@
+import "./ContactForm.scss";
+
 import emailjs from "emailjs-com";
 import React, {useEffect, useState} from "react";
+import {isMobile, isIOS13} from "react-device-detect";
 
 const ContactForm: React.FC = () => {
     const [name, setName] = useState("");
@@ -88,7 +91,7 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="ContactForm" onSubmit={handleSubmit}>
             <div className="form-group">
                 <input
                     id="name"
@@ -147,7 +150,13 @@ const ContactForm: React.FC = () => {
             </div>
             {emailSend && (
                 <div className="d-flex justify-content-center">
-                    Message successfully send!
+                    {isMobile || isIOS13 ? (
+                        <div className="success">
+                            Message successfully sent!
+                        </div>
+                    ) : (
+                        <div>Message successfully sent!</div>
+                    )}
                 </div>
             )}
         </form>

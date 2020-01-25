@@ -1,0 +1,17 @@
+@use "./src/index";
+
+.ContactForm {
+    .success {
+        margin-bottom: 3rem;
+        padding: 1rem;
+        height: 10vh;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    @include index.media-breakpoint-down(lg) {
+        padding-bottom: 5rem;
+    }
+}

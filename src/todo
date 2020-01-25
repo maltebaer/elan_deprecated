@@ -9,7 +9,6 @@
 ## our network ##
 - form
     - weird invalid email error
-    - check email send feedback on phone
 - random images
     - instagram api
 
@@ -20,7 +19,6 @@
 ### mobile ###
 
 ### styling ###
-- header/footer padding
 - combine classes
 
 ### bugs ###

@@ -1,3 +1,5 @@
+import "./OurNetwork.scss";
+
 import React from "react";
 
 import ContactForm from "../ContactForm";
@@ -15,7 +17,7 @@ const OurNetwork: React.FC = () => {
 const Aside = <ContactForm />;
 
 const Main = (
-    <div className="h-100">
+    <div className="OurNetwork h-100">
         <Instagram />
     </div>
 );

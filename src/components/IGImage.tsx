@@ -28,7 +28,7 @@ const properties: IProperty[] = [
     },
     {
         left: "20%",
-        top: "15%",
+        top: "20%",
         width: "40%",
     },
 ];
