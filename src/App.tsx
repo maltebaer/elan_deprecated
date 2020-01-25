@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
-import {isMobile} from "react-device-detect";
+import {isIOS13, isMobile} from "react-device-detect";
 import {FullPage, Slide} from "react-full-page";
 
 import Footer from "./components/Footer";
@@ -63,7 +63,28 @@ const App: React.FC = () => {
 
     return (
         <div className="container-fluid">
-            {!isMobile ? (
+            {isMobile || isIOS13 ? (
+                <React.Fragment>
+                    <div className="vh-100 d-flex flex-column justify-content-between">
+                        <MobileHeader />
+                        <div id={"home"}>
+                            <Home />
+                        </div>
+                    </div>
+                    <div id={"what-we-do"}>
+                        <WhatWeDo />
+                    </div>
+                    <div id={"work"}>
+                        <Work />
+                    </div>
+                    <div id={"our-network"}>
+                        <OurNetwork />
+                    </div>
+                    <div id={"about"}>
+                        <About />
+                    </div>
+                </React.Fragment>
+            ) : (
                 <React.Fragment>
                     <Header
                         currentSlideIndex={currentSlideIndex}
@@ -91,27 +112,6 @@ const App: React.FC = () => {
                         </Slide>
                     </FullPage>
                     <Footer />
-                </React.Fragment>
-            ) : (
-                <React.Fragment>
-                    <div className="vh-100 d-flex flex-column justify-content-between">
-                        <MobileHeader />
-                        <div id={"home"}>
-                            <Home />
-                        </div>
-                    </div>
-                    <div id={"what-we-do"}>
-                        <WhatWeDo />
-                    </div>
-                    <div id={"work"}>
-                        <Work />
-                    </div>
-                    <div id={"our-network"}>
-                        <OurNetwork />
-                    </div>
-                    <div id={"about"}>
-                        <About />
-                    </div>
                 </React.Fragment>
             )}
         </div>

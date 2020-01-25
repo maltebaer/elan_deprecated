@@ -1,12 +1,8 @@
 ### general ###
 
-- only fb and ig
-
 ## home ##
-- mobile: fix vh-100
 
 ## what we do ##
-- overflow on small height
 
 ## work ##
 
@@ -28,8 +24,8 @@
 - menu
 
 
-### misc ###
-- refactor HeaderItem and reuse in Header
+### styling ###
+- header/footer padding
 - combine classes
 
 ### bugs ###

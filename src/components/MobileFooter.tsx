@@ -1,15 +1,15 @@
 import React from "react";
 
-import FooterContact from "./FooterContact";
-import FooterLinks from "./FooterLinks";
-import FooterMail from "./FooterMail";
+import Imprint from "./Imprint";
+import Mail from "./Mail";
+import SocialLinks from "./SocialLinks";
 
 const MobileFooter: React.FC = () => {
     return (
         <div className="margin-y">
-            <FooterLinks />
-            <FooterContact />
-            <FooterMail />
+            <SocialLinks />
+            <Mail />
+            <Imprint />
         </div>
     );
 };
