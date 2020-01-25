@@ -44,14 +44,13 @@
             padding: 0;
         }
         &.bg-about {
-            background-size: 70% 20%;
-            background-position: left 80%;
+            background-size: 70% 30%;
+            background-position: left bottom;
         }
     }
     @include index.media-breakpoint-down(lg) {
         .main-limiter {
             width: 100%;
-            // margin-bottom: 2rem;
         }
     }
 }

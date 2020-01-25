@@ -1,7 +1,7 @@
 import "./About.scss";
 
 import React from "react";
-import {isMobile, isIOS13} from "react-device-detect";
+import {isIOS13, isMobile, isTablet} from "react-device-detect";
 
 import MobileFooter from "../MobileFooter";
 import Page from "../Page";
@@ -63,7 +63,11 @@ const Main = (
                 />
             </div>
         </div>
-        {(isMobile || isIOS13) && <MobileFooter />}
+        {(isMobile || isIOS13) && (
+            <div className="margin-y">
+                <MobileFooter />
+            </div>
+        )}
     </div>
 );
 

@@ -39,7 +39,7 @@
         transform: rotate(-90deg) translate(-108px);
     }
 
-    @include index.media-breakpoint-down(sm) {
+    @include index.media-breakpoint-down(md) {
         .zoom-container {
             width: 40vw;
         }
