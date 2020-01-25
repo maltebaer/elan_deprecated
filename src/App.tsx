@@ -84,7 +84,7 @@ const App: React.FC = () => {
                     {menuIsOpen ? (
                         <div
                             id="menu"
-                            className="menu padding-y bg-dark text-white"
+                            className="mobile-height padding-y bg-dark text-white"
                         >
                             <div className="container-fluid d-flex flex-column justify-content-between h-100">
                                 <MobileHeader toggleMobileMenu={toggleMenu} />
@@ -92,31 +92,32 @@ const App: React.FC = () => {
                             </div>
                         </div>
                     ) : (
-                        <div className="container-fluid">
-                            <div
-                                className="padding-y"
-                                style={{
-                                    height: "100vh",
-                                }}
-                            >
-                                <MobileHeader toggleMobileMenu={toggleMenu} />
-                                <div id={"home"}>
+                        <React.Fragment>
+                            <div className="mobile-height padding-y">
+                                <div className="container-fluid">
+                                    <MobileHeader
+                                        toggleMobileMenu={toggleMenu}
+                                    />
+                                </div>
+                                <div id={"home"} className="h-100">
                                     <Home />
                                 </div>
                             </div>
-                            <div id={"what-we-do"}>
-                                <WhatWeDo />
+                            <div className="container-fluid">
+                                <div id={"what-we-do"}>
+                                    <WhatWeDo />
+                                </div>
+                                <div id={"work"}>
+                                    <Work />
+                                </div>
+                                <div id={"our-network"}>
+                                    <OurNetwork />
+                                </div>
+                                <div id={"about"}>
+                                    <About />
+                                </div>
                             </div>
-                            <div id={"work"}>
-                                <Work />
-                            </div>
-                            <div id={"our-network"}>
-                                <OurNetwork />
-                            </div>
-                            <div id={"about"}>
-                                <About />
-                            </div>
-                        </div>
+                        </React.Fragment>
                     )}
                 </React.Fragment>
             ) : (

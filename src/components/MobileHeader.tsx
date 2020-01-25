@@ -1,3 +1,5 @@
+import "./MobileHeader.scss";
+
 import React from "react";
 
 interface IMobileHeaderProps {
@@ -6,7 +8,7 @@ interface IMobileHeaderProps {
 
 const MobileHeader: React.FC<IMobileHeaderProps> = (props) => {
     return (
-        <div className="d-flex justify-content-between">
+        <div className="MobileHeader d-flex justify-content-between">
             <span className="text-uppercase">ELAN Berlin</span>
             <a
                 href="#"

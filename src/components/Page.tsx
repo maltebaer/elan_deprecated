@@ -14,8 +14,8 @@ const Page: React.FC<IPageProps> = (props) => {
     return (
         <div className={`Page row${props.isAbout ? " bg-about" : ""}`}>
             {/* ASIDE */}
-            <div className="aside-container col-12 col-lg-3 bg-secondary">
-                <div className="aside-limiter bg-info border">
+            <div className="aside-container col-12 col-lg-3">
+                <div className="aside-limiter">
                     <div className="mb-5 text-uppercase line-through">
                         {props.title}
                     </div>
@@ -23,12 +23,8 @@ const Page: React.FC<IPageProps> = (props) => {
                 </div>
             </div>
             {/* MAIN */}
-            <div
-                className={`col${
-                    !props.isWhatWeDo ? " main-container" : ""
-                } bg-secondary`}
-            >
-                <div className="main-limiter bg-info border">
+            <div className={`col${!props.isWhatWeDo ? " main-container" : ""}`}>
+                <div className="main-limiter">
                     <div className="h-100">{props.children}</div>
                 </div>
             </div>

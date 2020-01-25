@@ -26,6 +26,9 @@ h2 {
 a {
     color: inherit;
 }
+a:hover {
+    color: inherit;
+}
 
 // customize
 .form-control {
@@ -85,7 +88,7 @@ a {
     cursor: pointer;
 }
 
-.menu {
+.mobile-height {
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
 }
