@@ -3,27 +3,22 @@ import {isMobile} from "react-device-detect";
 
 import HorizontalBar from "./HorizontalBar";
 
-const FooterLinks: React.FC = () => {
-    let className = "footer-item";
-    if (isMobile) {
-        className += " small";
-    }
+interface ISocialLinksProps {
+    isHeader?: boolean;
+}
 
+const SocialLinks: React.FC<ISocialLinksProps> = (props) => {
     return (
         <React.Fragment>
-            <span className={className}>
-                <a href="#" className="nav-link">
-                    Facebook
-                </a>
+            <span className={isMobile ? "small" : undefined}>
+                <a href="#">Facebook</a>
             </span>
-            <HorizontalBar large />
-            <span className={className}>
-                <a href="#" className="nav-link">
-                    Instagram
-                </a>
+            <HorizontalBar large isHeader={props.isHeader} />
+            <span className={isMobile ? "small" : undefined}>
+                <a href="#">Instagram</a>
             </span>
         </React.Fragment>
     );
 };
 
-export default FooterLinks;
+export default SocialLinks;

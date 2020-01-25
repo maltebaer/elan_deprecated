@@ -35,7 +35,7 @@ const Header: React.FC<IHeaderProps> = (props) => {
                 <span className={headerSectionStyle}>
                     <li>
                         <span
-                            className="cursor-pointer nav-link text-uppercase"
+                            className="cursor-pointer text-uppercase"
                             // tslint:disable-next-line: jsx-no-lambda
                             onClick={() => props.onClick(0)}
                         >

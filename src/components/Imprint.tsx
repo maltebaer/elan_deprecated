@@ -2,13 +2,8 @@ import React from "react";
 import {isMobile} from "react-device-detect";
 
 const Imprint: React.FC = () => {
-    let className = "footer-item nav-link";
-    if (isMobile) {
-        className += " small";
-    }
-
     return (
-        <span className={className}>
+        <span className={isMobile ? "small" : undefined}>
             <a href="#imprint" data-toggle="modal">
                 Imprint
             </a>
@@ -34,7 +29,7 @@ const Imprint: React.FC = () => {
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div className="modal-body">
+                        <div className="modal-body text-dark">
                             <h5>Imprint</h5>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur

@@ -1,12 +1,20 @@
 import React from "react";
 
-const MobileHeader: React.FC = () => {
+interface IMobileHeaderProps {
+    toggleMobileMenu: () => void;
+}
+
+const MobileHeader: React.FC<IMobileHeaderProps> = (props) => {
     return (
-        <div className="margin-y d-flex justify-content-between">
-            <span className="cursor-pointer nav-link text-uppercase">
-                ELAN Berlin
-            </span>
-            <span className="cursor-pointer nav-link text-uppercase">Menu</span>
+        <div className="d-flex justify-content-between">
+            <span className="text-uppercase">ELAN Berlin</span>
+            <a
+                href="#"
+                className="text-uppercase"
+                onClick={props.toggleMobileMenu}
+            >
+                Menu
+            </a>
         </div>
     );
 };

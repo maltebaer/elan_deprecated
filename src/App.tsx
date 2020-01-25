@@ -4,6 +4,7 @@ import {FullPage, Slide} from "react-full-page";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Menu from "./components/Menu";
 import MobileHeader from "./components/MobileHeader";
 import Navbar from "./components/Navbar";
 import About from "./components/pages/About";
@@ -20,6 +21,9 @@ interface IChangeObject {
 }
 
 const App: React.FC = () => {
+    const [menuIsOpen, setMenuIsOpen] = useState(false);
+    // const [vh, setVh] = useState(window.innerHeight * 0.01);
+
     const fullPageRef = useRef<any>();
 
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -52,6 +56,11 @@ const App: React.FC = () => {
         };
     });
 
+    useEffect(() => {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+    }, []);
+
     const onAfterChange = (changeObject: IChangeObject) => {
         window.location.hash = routes[changeObject.to];
         setCurrentSlideIndex(changeObject.to);
@@ -61,31 +70,57 @@ const App: React.FC = () => {
         fullPageRef.current.scrollToSlide(i);
     };
 
+    const toggleMenu = () => {
+        setMenuIsOpen(!menuIsOpen);
+    };
+    const closeMenu = () => {
+        setMenuIsOpen(false);
+    };
+
     return (
-        <div className="container-fluid">
+        <React.Fragment>
             {isMobile || isIOS13 ? (
                 <React.Fragment>
-                    <div className="vh-100 d-flex flex-column justify-content-between">
-                        <MobileHeader />
-                        <div id={"home"}>
-                            <Home />
+                    {menuIsOpen ? (
+                        <div
+                            id="menu"
+                            className="menu padding-y bg-dark text-white"
+                        >
+                            <div className="container-fluid d-flex flex-column justify-content-between h-100">
+                                <MobileHeader toggleMobileMenu={toggleMenu} />
+                                <Menu onCloseMenu={closeMenu} />
+                            </div>
                         </div>
-                    </div>
-                    <div id={"what-we-do"}>
-                        <WhatWeDo />
-                    </div>
-                    <div id={"work"}>
-                        <Work />
-                    </div>
-                    <div id={"our-network"}>
-                        <OurNetwork />
-                    </div>
-                    <div id={"about"}>
-                        <About />
-                    </div>
+                    ) : (
+                        <div className="container-fluid">
+                            <div
+                                className="padding-y"
+                                style={{
+                                    height: "100vh",
+                                }}
+                            >
+                                <MobileHeader toggleMobileMenu={toggleMenu} />
+                                <div id={"home"}>
+                                    <Home />
+                                </div>
+                            </div>
+                            <div id={"what-we-do"}>
+                                <WhatWeDo />
+                            </div>
+                            <div id={"work"}>
+                                <Work />
+                            </div>
+                            <div id={"our-network"}>
+                                <OurNetwork />
+                            </div>
+                            <div id={"about"}>
+                                <About />
+                            </div>
+                        </div>
+                    )}
                 </React.Fragment>
             ) : (
-                <React.Fragment>
+                <div className="container-fluid">
                     <Header
                         currentSlideIndex={currentSlideIndex}
                         onClick={onControlsClick}
@@ -112,9 +147,9 @@ const App: React.FC = () => {
                         </Slide>
                     </FullPage>
                     <Footer />
-                </React.Fragment>
+                </div>
             )}
-        </div>
+        </React.Fragment>
     );
 };
 

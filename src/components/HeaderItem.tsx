@@ -8,7 +8,7 @@ export interface IHeaderItemProps {
 }
 
 const HeaderItem: React.FC<IHeaderItemProps> = (props) => {
-    let className = "cursor-pointer nav-link text-uppercase";
+    let className = "cursor-pointer text-uppercase ml-3";
     if (props.active) {
         className += " line-through";
     }

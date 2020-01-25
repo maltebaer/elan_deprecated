@@ -11,9 +11,7 @@ const Footer: React.FC = () => {
                 <span className="fixed-width d-flex align-items-center">
                     <Mail />
                 </span>
-                <span className="d-flex align-items-center">
-                    <SocialLinks />
-                </span>
+                w
                 <span className="fixed-width d-flex justify-content-end align-items-center">
                     <Imprint />
                 </span>
