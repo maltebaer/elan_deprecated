@@ -35,7 +35,7 @@ const Portrait: React.FC<IPortraitProps> = (props) => {
             )}
             <div>
                 <span
-                    className={`mb-2 text-uppercase d-block text-${props.alignment}`}
+                    className={`name mb-2 text-uppercase d-block text-${props.alignment}`}
                 >
                     {props.name}
                 </span>
