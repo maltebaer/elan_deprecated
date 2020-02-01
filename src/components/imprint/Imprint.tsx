@@ -30,7 +30,7 @@ const Imprint: React.FC = () => {
                             </button>
                         </div>
                         <div className="modal-body text-dark">
-                            <h5>Imprint</h5>
+                            <h1>Imprint</h1>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Velit itaque dolores error

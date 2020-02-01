@@ -16,9 +16,7 @@ const Page: React.FC<IPageProps> = (props) => {
             {/* ASIDE */}
             <div className="aside-container col-12 col-lg-3">
                 <div className="aside-limiter">
-                    <div className="mb-5 text-uppercase line-through">
-                        {props.title}
-                    </div>
+                    <h1 className="mb-5">{props.title}</h1>
                     <div>{props.aside}</div>
                 </div>
             </div>

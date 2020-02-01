@@ -45,3 +45,9 @@
         }
     }
 }
+
+.Portrait:hover {
+    .name {
+        text-decoration: line-through;
+    }
+}

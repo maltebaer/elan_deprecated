@@ -13,6 +13,12 @@ $primary: black;
 // variables
 $big-spacer: bootstrap.$spacer * 5;
 
+h1 {
+    font-size: 0.75rem;
+
+    text-transform: uppercase;
+    text-decoration: line-through;
+}
 h2 {
     margin-bottom: 1rem;
 
@@ -21,7 +27,7 @@ h2 {
     font-weight: 400;
 
     text-transform: uppercase;
-    text-decoration: underline;
+    text-decoration: line-through;
 }
 a {
     color: inherit;
