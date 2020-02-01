@@ -1,61 +1,42 @@
 import "./ShowcaseList.scss";
 
 import React from "react";
+import {Clients} from "./pages/Work";
 
 interface IShowcaseListProps {
-    openModalId: number | null;
+    openModalId: Clients | null;
 
-    toggleModal: (id: number) => void;
+    onModalToggle: (id: Clients) => void;
 }
 
 const ShowcaseList: React.FC<IShowcaseListProps> = (props) => {
+    const clients: Clients[] = [
+        "boiler-room",
+        "integr8",
+        "melt",
+        "moxy",
+        "scopes",
+        "soundcloud",
+        "the-standard",
+        "twitter",
+        "whole",
+    ];
+    const items = clients.map((x, idx) => (
+        <li
+            key={idx}
+            className={props.openModalId === x ? "active" : undefined}
+        >
+            <a
+                // tslint:disable-next-line: jsx-no-lambda
+                onClick={() => props.onModalToggle(x)}
+            >
+                {x.replace(/-/g, " ")}
+            </a>
+        </li>
+    ));
     return (
-        <ul className="ShowcaseList">
-            <li>
-                <a
-                    className={props.openModalId === 1 ? "active" : undefined}
-                    // tslint:disable-next-line: jsx-no-lambda
-                    onClick={() => props.toggleModal(1)}
-                >
-                    Client 1
-                </a>
-            </li>
-            <li>
-                <a
-                    className={props.openModalId === 2 ? "active" : undefined}
-                    // tslint:disable-next-line: jsx-no-lambda
-                    onClick={() => props.toggleModal(2)}
-                >
-                    Client 2
-                </a>
-            </li>
-            <li>
-                <a
-                    className={props.openModalId === 3 ? "active" : undefined}
-                    // tslint:disable-next-line: jsx-no-lambda
-                    onClick={() => props.toggleModal(3)}
-                >
-                    Client 3
-                </a>
-            </li>
-            <li>
-                <a
-                    className={props.openModalId === 4 ? "active" : undefined}
-                    // tslint:disable-next-line: jsx-no-lambda
-                    onClick={() => props.toggleModal(4)}
-                >
-                    Client 4
-                </a>
-            </li>
-            <li>
-                <a
-                    className={props.openModalId === 5 ? "active" : undefined}
-                    // tslint:disable-next-line: jsx-no-lambda
-                    onClick={() => props.toggleModal(5)}
-                >
-                    Client 5
-                </a>
-            </li>
+        <ul className="ShowcaseList scrollbar">
+            <div className="gradient">{items}</div>
         </ul>
     );
 };

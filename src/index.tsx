@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import "bootstrap/js/dist/carousel";
 import "bootstrap/js/dist/collapse";
 import "bootstrap/js/dist/modal";
 import "./index.scss";

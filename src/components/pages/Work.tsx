@@ -6,6 +6,17 @@ import Page from "../Page";
 import Showcase from "../Showcase";
 import ShowcaseList from "../ShowcaseList";
 
+export type Clients =
+    | "boiler-room"
+    | "integr8"
+    | "melt"
+    | "moxy"
+    | "scopes"
+    | "soundcloud"
+    | "the-standard"
+    | "twitter"
+    | "whole";
+
 const Work: React.FC = () => {
     return (
         <Page title="Work" aside={Aside}>
@@ -36,24 +47,28 @@ const Aside = (
 );
 
 const Main: React.FC = () => {
-    const [openModalId, setOpenModalId] = useState<number | null>(null);
+    const [openModalId, setOpenModalId] = useState<Clients | null>(null);
 
-    const toggleModal = (id: number) => {
+    const onModalToggle = (id: Clients) => {
         if (openModalId !== id) {
             setOpenModalId(id);
         } else {
             setOpenModalId(null);
         }
     };
+    const onModalClose = () => {
+        setOpenModalId(null);
+    };
 
     return (
         <div className="Work">
-            <Showcase clientId={1} modalIsOpen={openModalId === 1} />
-            <Showcase clientId={2} modalIsOpen={openModalId === 2} />
-            <Showcase clientId={3} modalIsOpen={openModalId === 3} />
-            <Showcase clientId={4} modalIsOpen={openModalId === 4} />
-            <Showcase clientId={5} modalIsOpen={openModalId === 5} />
-            <ShowcaseList openModalId={openModalId} toggleModal={toggleModal} />
+            <ShowcaseList
+                openModalId={openModalId}
+                onModalToggle={onModalToggle}
+            />
+            {openModalId && (
+                <Showcase id={openModalId} onModalClose={onModalClose} />
+            )}
         </div>
     );
 };
