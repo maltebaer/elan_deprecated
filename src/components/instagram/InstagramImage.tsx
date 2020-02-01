@@ -43,7 +43,7 @@ const InstagramImage: React.FC<IInstagramImageProps> = (props) => {
                 zIndex: props.id,
             }}
             width={properties[props.id - 1].width}
-            src={`/assets/ig-${props.id}.jpg`}
+            src={`/assets/ig/${props.id}.jpg`}
             alt={`IG-${props.id}`}
         />
     );

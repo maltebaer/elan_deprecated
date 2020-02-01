@@ -9,7 +9,11 @@ const Home: React.FC = () => {
             <div className="background-container">
                 <div className="background" />
             </div>
-            <img className="negative-margin" src="/assets/holo" alt="holo" />
+            <img
+                className="negative-margin"
+                src="/assets/holo-1080.png"
+                alt="holo"
+            />
             <img src="/assets/cover" alt="cover" />
             {(isMobile || isIOS13) && (
                 <div className="down">
