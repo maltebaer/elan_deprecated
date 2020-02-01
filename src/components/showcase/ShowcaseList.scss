@@ -4,7 +4,7 @@
     list-style: none;
     padding: 0 0 0 1rem;
 
-    height: 50vh;
+    height: 60vh;
     overflow-y: scroll;
 
     direction: rtl;
@@ -41,7 +41,6 @@
     }
 
     @include index.media-breakpoint-down(lg) {
-        padding: 0;
         height: 30vh;
 
         a {

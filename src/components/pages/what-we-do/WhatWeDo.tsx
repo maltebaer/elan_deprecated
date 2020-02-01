@@ -2,8 +2,8 @@ import "./WhatWeDo.scss";
 
 import React from "react";
 
-import Accordion from "../Accordion";
-import Page from "../Page";
+import Accordion from "../../accordion/Accordion";
+import Page from "../../page/Page";
 
 const WhatWeDo: React.FC = () => {
     return (

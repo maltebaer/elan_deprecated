@@ -3,7 +3,7 @@ import "./Showcase.scss";
 import React from "react";
 import {isIOS13, isMobile} from "react-device-detect";
 
-import {Clients} from "./pages/Work";
+import {Clients} from "../pages/work/Work";
 
 const images = {
     "boiler-room": ["/assets/work/boiler-room/1.jpg"],

@@ -1,15 +1,15 @@
-import "./Menu.scss";
+import "./MobileMenu.scss";
 
 import React from "react";
 
-import {routes} from "../App";
+import {routes} from "../../App";
 import MobileFooter from "./MobileFooter";
 
-interface IMenuProps {
+interface IMobileMenuProps {
     onCloseMenu: () => void;
 }
 
-const Menu: React.FC<IMenuProps> = (props) => {
+const MobileMenu: React.FC<IMobileMenuProps> = (props) => {
     const renderMenuItems = () => {
         const menuItems: any[] = [];
 
@@ -33,9 +33,9 @@ const Menu: React.FC<IMenuProps> = (props) => {
     return (
         <React.Fragment>
             <ul className="menu-list">{renderMenuItems()}</ul>
-            <MobileFooter isHeader />
+            <MobileFooter inHeader />
         </React.Fragment>
     );
 };
 
-export default Menu;
+export default MobileMenu;

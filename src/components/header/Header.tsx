@@ -1,6 +1,6 @@
 import React from "react";
 
-import {routes} from "../App";
+import {routes} from "../../App";
 import HeaderItem from "./HeaderItem";
 
 interface IHeaderProps {

@@ -1,16 +1,16 @@
 import "./Instagram.scss";
 
 import React from "react";
-import IGImage from "./IGImage";
+import InstagramImage from "./InstagramImage";
 
 const Instagram: React.FC = () => {
     return (
         <div className="Instagram d-flex justify-content-center align-items-center">
             <div className="instagram-container">
-                <IGImage id={1} />
-                <IGImage id={2} />
-                <IGImage id={3} />
-                <IGImage id={4} />
+                <InstagramImage id={1} />
+                <InstagramImage id={2} />
+                <InstagramImage id={3} />
+                <InstagramImage id={4} />
                 <span className="cta">
                     Follow <a href="#">@elanberlin</a>
                     <br />

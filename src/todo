@@ -1,22 +1,16 @@
 ### general ###
-- cleanup
-    - npm
 
 ## home ##
 
 ## what we do ##
 
 ## work ##
-- update showcase
 
 ## our network ##
-- form
-    - weird invalid email error
 - random images
     - instagram api
 
 ## about ##
-- img width difference sm-md
 - email onClick --> clipboard and popup
 - image onclick --> linkedin
 
@@ -30,4 +24,3 @@
 - url without hash
 - sass use syntax loading bug
 - two page scrolling on mac
-- header jump when logo is displayed on mac

@@ -2,8 +2,8 @@ import "./NavItem.scss";
 
 import React from "react";
 
-import {routes} from "../App";
-import VerticalBar from "./VerticalBar";
+import {routes} from "../../App";
+import VerticalBar from "../VerticalBar";
 
 interface INavItemProps {
     index: number;

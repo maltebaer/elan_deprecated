@@ -1,7 +1,6 @@
 import "./Portrait.scss";
 
 import React from "react";
-import {isMobile} from "react-device-detect";
 
 interface IPortraitProps {
     name: string;
@@ -24,7 +23,7 @@ const Portrait: React.FC<IPortraitProps> = (props) => {
 
     return (
         <div className="Portrait d-flex">
-            {!isMobile && props.alignment === "left" && (
+            {props.alignment === "left" && (
                 <span className="mr-2 aside">
                     <div
                         id="mail-raquel"
@@ -49,7 +48,7 @@ const Portrait: React.FC<IPortraitProps> = (props) => {
                     />
                 </div>
             </div>
-            {!isMobile && props.alignment === "right" && (
+            {props.alignment === "right" && (
                 <span className="ml-2 aside">
                     <div className="rotated  text-underline">{props.email}</div>
                 </span>

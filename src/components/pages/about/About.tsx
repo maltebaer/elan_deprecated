@@ -1,11 +1,11 @@
 import "./About.scss";
 
 import React from "react";
-import {isIOS13, isMobile, isTablet, isMobileOnly} from "react-device-detect";
+import {isIOS13, isMobile, isMobileOnly} from "react-device-detect";
 
-import MobileFooter from "../MobileFooter";
-import Page from "../Page";
-import Portrait from "../Portrait";
+import MobileFooter from "../../mobile/MobileFooter";
+import Page from "../../page/Page";
+import Portrait from "../../portrait/Portrait";
 
 const About: React.FC = () => {
     return (
@@ -42,9 +42,9 @@ const Aside = (
 const Main = (
     <div className="About">
         <div
-            className={`d-flex justify-content-${
-                isMobileOnly ? "between" : "center pt-5"
-            } align-items-center`}
+            className={`d-flex justify-content-center align-items-center${
+                isMobileOnly ? "" : " pt-5"
+            }`}
         >
             <div className="pr-3 higher">
                 <Portrait

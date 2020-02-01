@@ -1,6 +1,6 @@
 import React from "react";
 
-interface IIGImageProps {
+interface IInstagramImageProps {
     id: number;
 }
 
@@ -33,7 +33,7 @@ const properties: IProperty[] = [
     },
 ];
 
-const IGImage: React.FC<IIGImageProps> = (props) => {
+const InstagramImage: React.FC<IInstagramImageProps> = (props) => {
     return (
         <img
             style={{
@@ -49,4 +49,4 @@ const IGImage: React.FC<IIGImageProps> = (props) => {
     );
 };
 
-export default IGImage;
+export default InstagramImage;

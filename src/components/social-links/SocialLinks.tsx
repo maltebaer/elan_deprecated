@@ -1,7 +1,7 @@
 import React from "react";
 import {isMobile} from "react-device-detect";
 
-import HorizontalBar from "./HorizontalBar";
+import HorizontalBar from "../horizontal-bar/HorizontalBar";
 
 interface ISocialLinksProps {
     isHeader?: boolean;

@@ -2,9 +2,9 @@ import "./OurNetwork.scss";
 
 import React from "react";
 
-import ContactForm from "../ContactForm";
-import Instagram from "../Instagram";
-import Page from "../Page";
+import ContactForm from "../../contact-form/ContactForm";
+import Instagram from "../../instagram/Instagram";
+import Page from "../../page/Page";
 
 const OurNetwork: React.FC = () => {
     return (

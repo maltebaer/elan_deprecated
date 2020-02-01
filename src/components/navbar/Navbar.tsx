@@ -1,9 +1,9 @@
 import "./Navbar.scss";
 
 import React from "react";
-import {isMobile} from "react-device-detect";
+import {isIOS13, isMobile} from "react-device-detect";
 
-import {routes} from "../App";
+import {routes} from "../../App";
 import NavItem from "./NavItem";
 
 interface INavbarProps {
@@ -25,29 +25,21 @@ const Navbar: React.FC<INavbarProps> = (props) => {
             const navItemProps = {
                 active: currentSlideIndex === i,
                 index: i,
-                key: i,
                 onClick: () => props.scrollToSlide(i),
             };
-            navItems.push(<NavItem {...navItemProps} />);
+            navItems.push(<NavItem key={i} {...navItemProps} />);
         });
 
         return navItems;
     };
 
-    const render = () => {
-        if (!isMobile) {
-            return (
-                <nav className="Navbar vh-100 d-flex align-items-center">
-                    <ul className="nav d-flex flex-column d-inline-block">
-                        {renderNavItems(props.getCurrentSlideIndex())}
-                    </ul>
-                </nav>
-            );
-        }
-        return null;
-    };
-
-    return render();
+    return !isMobile || !isIOS13 ? (
+        <nav className="Navbar vh-100 d-flex align-items-center">
+            <ul className="nav d-flex flex-column d-inline-block">
+                {renderNavItems(props.getCurrentSlideIndex())}
+            </ul>
+        </nav>
+    ) : null;
 };
 
 export default Navbar;

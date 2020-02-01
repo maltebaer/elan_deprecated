@@ -2,9 +2,9 @@ import "./Work.scss";
 
 import React, {useState} from "react";
 
-import Page from "../Page";
-import Showcase from "../Showcase";
-import ShowcaseList from "../ShowcaseList";
+import Page from "../../page/Page";
+import Showcase from "../../showcase/Showcase";
+import ShowcaseList from "../../showcase/ShowcaseList";
 
 export type Clients =
     | "boiler-room"

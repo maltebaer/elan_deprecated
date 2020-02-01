@@ -1,8 +1,8 @@
 import React from "react";
 
-import Imprint from "./Imprint";
-import Mail from "./Mail";
-import SocialLinks from "./SocialLinks";
+import Imprint from "../imprint/Imprint";
+import Mail from "../mail/Mail";
+import SocialLinks from "../social-links/SocialLinks";
 
 const Footer: React.FC = () => {
     return (

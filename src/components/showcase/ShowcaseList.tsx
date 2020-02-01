@@ -1,7 +1,7 @@
 import "./ShowcaseList.scss";
 
 import React from "react";
-import {Clients} from "./pages/Work";
+import {Clients} from "../pages/work/Work";
 
 interface IShowcaseListProps {
     openModalId: Clients | null;

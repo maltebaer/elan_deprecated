@@ -2,7 +2,7 @@ import "./ContactForm.scss";
 
 import emailjs from "emailjs-com";
 import React, {useEffect, useState} from "react";
-import {isMobile, isIOS13} from "react-device-detect";
+import {isIOS13, isMobile} from "react-device-detect";
 
 const ContactForm: React.FC = () => {
     const [name, setName] = useState("");
@@ -22,7 +22,7 @@ const ContactForm: React.FC = () => {
     });
 
     const validEmail = () => {
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const re = /\S+@\S+\.\S+/;
         return re.test(String(senderEmail).toLowerCase());
     };
 

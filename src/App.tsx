@@ -2,16 +2,16 @@ import React, {useEffect, useRef, useState} from "react";
 import {isIOS13, isMobile} from "react-device-detect";
 import {FullPage, Slide} from "react-full-page";
 
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Menu from "./components/Menu";
-import MobileHeader from "./components/MobileHeader";
-import Navbar from "./components/Navbar";
-import About from "./components/pages/About";
-import Home from "./components/pages/Home";
-import OurNetwork from "./components/pages/OurNetwork";
-import WhatWeDo from "./components/pages/WhatWeDo";
-import Work from "./components/pages/Work";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import MobileHeader from "./components/mobile/MobileHeader";
+import MobileMenu from "./components/mobile/MobileMenu";
+import Navbar from "./components/navbar/Navbar";
+import About from "./components/pages/about/About";
+import Home from "./components/pages/home/Home";
+import OurNetwork from "./components/pages/our-network/OurNetwork";
+import WhatWeDo from "./components/pages/what-we-do/WhatWeDo";
+import Work from "./components/pages/work/Work";
 
 export const routes = ["home", "what-we-do", "work", "our-network", "about"];
 
@@ -22,7 +22,6 @@ interface IChangeObject {
 
 const App: React.FC = () => {
     const [menuIsOpen, setMenuIsOpen] = useState(false);
-    // const [vh, setVh] = useState(window.innerHeight * 0.01);
 
     const fullPageRef = useRef<any>();
 
@@ -88,7 +87,7 @@ const App: React.FC = () => {
                         >
                             <div className="container-fluid d-flex flex-column justify-content-between h-100">
                                 <MobileHeader toggleMobileMenu={toggleMenu} />
-                                <Menu onCloseMenu={closeMenu} />
+                                <MobileMenu onCloseMenu={closeMenu} />
                             </div>
                         </div>
                     ) : (
