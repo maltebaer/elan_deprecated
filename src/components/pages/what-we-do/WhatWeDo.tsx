@@ -66,7 +66,7 @@ const Aside = (
 
 const Main = (
     <div className="WhatWeDo h-100 d-flex flex-column justify-content-center align-items-center">
-        <img src="/assets/elan" alt="ELAN" />
+        <img src="/assets/elan.png" alt="ELAN" />
     </div>
 );
 

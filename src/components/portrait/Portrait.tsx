@@ -10,17 +10,6 @@ interface IPortraitProps {
 }
 
 const Portrait: React.FC<IPortraitProps> = (props) => {
-    const copyEmailAdress = () => {
-        navigator.clipboard.writeText(props.email).then(
-            () => {
-                /* success */
-            },
-            () => {
-                /* failure */
-            },
-        );
-    };
-
     return (
         <div className="Portrait d-flex">
             {props.alignment === "left" && (
