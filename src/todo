@@ -1,41 +1,25 @@
 ### general ###
-- change email to hello@
+- make imprint scrollabel
 
 ## home ##
 - carousel for cover img
-- resize cover img
-- fb & ig links
-- imprint content
 
 ## what we do ##
-- content
-- resize elan img
 
 ## work ##
-- content (text)
-- complete client portfolios
 - reverse gradient on list
-- scrollable area
-    - scrollMode: full-page/normal
-    - onmousemove = function(e){console.log("mouse location:", e.clientX, e.clientY)}
 
 ## our network ##
 - setup emailjs credentials
-- ig link
 - random images
-    - 4 ig img
     - instagram api
 
 ## about ##
-- linkedin links
-- email onClick --> clipboard and popup
-- image onClick --> linkedin
 
 ### mobile ###
 - menu img
 
 ### styling ###
-- style email
 - combine classes
 
 ### bugs ###

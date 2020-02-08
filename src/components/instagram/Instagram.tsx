@@ -12,7 +12,14 @@ const Instagram: React.FC = () => {
                 <InstagramImage id={3} />
                 <InstagramImage id={4} />
                 <span className="cta">
-                    Follow <a href="#">@elanberlin</a>
+                    Follow{" "}
+                    <a
+                        href="https://www.instagram.com/elan.berlin/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        @elan.berlin
+                    </a>
                     <br />
                     on Instagram
                 </span>

@@ -11,10 +11,10 @@ const Home: React.FC = () => {
             </div>
             <img
                 className="negative-margin"
-                src="/assets/holo-1080.png"
+                src="/assets/holo.png"
                 alt="holo"
             />
-            <img src="/assets/cover" alt="cover" />
+            <img src="/assets/cover.png" alt="cover" />
             {(isMobile || isIOS13) && (
                 <div className="down">
                     <img id="iconDown" src="/assets/down.svg" alt="down" />

@@ -6,8 +6,23 @@ import {isIOS13, isMobile} from "react-device-detect";
 import {Clients} from "../pages/work/Work";
 
 const images = {
-    "boiler-room": ["/assets/work/boiler-room/1.jpg"],
-    integr8: ["/assets/work/integr8/1.jpg"],
+    "boiler-room": [
+        "/assets/work/boiler-room/1.jpg",
+        "/assets/work/boiler-room/2.jpg",
+        "/assets/work/boiler-room/4.jpg",
+        "/assets/work/boiler-room/5.jpg",
+        "/assets/work/boiler-room/6.jpg",
+        "/assets/work/boiler-room/7.jpg",
+        "/assets/work/boiler-room/c.png",
+    ],
+    integr8: [
+        "/assets/work/integr8/1.jpg",
+        "/assets/work/integr8/2.jpg",
+        "/assets/work/integr8/3.jpg",
+        "/assets/work/integr8/4.jpg",
+        "/assets/work/integr8/5.jpg",
+        "/assets/work/integr8/c.png",
+    ],
     melt: [
         "/assets/work/melt/1.jpg",
         "/assets/work/melt/2.jpg",
@@ -16,17 +31,50 @@ const images = {
         "/assets/work/melt/5.jpg",
         "/assets/work/melt/c.png",
     ],
-    moxy: ["/assets/work/moxy/1.jpg"],
-    scopes: ["/assets/work/scopes/1.jpg"],
+    moxy: [
+        "/assets/work/moxy/1.jpg",
+        "/assets/work/moxy/2.jpg",
+        "/assets/work/moxy/3.jpg",
+        "/assets/work/moxy/4.jpg",
+        "/assets/work/moxy/5.jpg",
+        "/assets/work/moxy/c.png",
+    ],
+    scopes: [
+        "/assets/work/scopes/1.jpg",
+        "/assets/work/scopes/2.jpg",
+        "/assets/work/scopes/3.jpg",
+        "/assets/work/scopes/4.jpg",
+        "/assets/work/scopes/c.png",
+    ],
     soundcloud: [
         "/assets/work/soundcloud/1.jpg",
         "/assets/work/soundcloud/2.jpg",
         "/assets/work/soundcloud/3.jpg",
         "/assets/work/soundcloud/4.jpg",
+        "/assets/work/soundcloud/5.jpg",
+        "/assets/work/soundcloud/6.jpg",
+        "/assets/work/soundcloud/c.png",
     ],
-    "the-standard": ["/assets/work/the-standard/1.jpg"],
-    twitter: ["/assets/work/twitter/1.jpg"],
-    whole: ["/assets/work/twitter/1.jpg"],
+    "the-standard": [
+        "/assets/work/the-standard/1.jpg",
+        "/assets/work/the-standard/2.jpg",
+        "/assets/work/the-standard/3.jpg",
+        "/assets/work/the-standard/4.jpg",
+        "/assets/work/the-standard/5.jpg",
+        "/assets/work/the-standard/6.jpg",
+        "/assets/work/the-standard/7.jpg",
+        "/assets/work/the-standard/c.png",
+    ],
+    twitter: ["/assets/work/twitter/1.jpg", "/assets/work/twitter/c.png"],
+    whole: [
+        "/assets/work/whole/1.jpg",
+        "/assets/work/whole/2.jpg",
+        "/assets/work/whole/3.jpg",
+        "/assets/work/whole/4.jpg",
+        "/assets/work/whole/5.jpg",
+        "/assets/work/whole/6.jpg",
+        "/assets/work/whole/c.png",
+    ],
 };
 
 interface IShowcaseProps {

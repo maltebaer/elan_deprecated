@@ -10,13 +10,12 @@ const MobileHeader: React.FC<IMobileHeaderProps> = (props) => {
     return (
         <div className="MobileHeader d-flex justify-content-between">
             <span className="text-uppercase">ELAN Berlin</span>
-            <a
-                href="#"
-                className="text-uppercase"
+            <button
+                className="no-button text-uppercase"
                 onClick={props.toggleMobileMenu}
             >
                 Menu
-            </a>
+            </button>
         </div>
     );
 };

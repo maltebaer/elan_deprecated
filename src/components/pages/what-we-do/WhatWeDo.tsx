@@ -2,7 +2,6 @@ import "./WhatWeDo.scss";
 
 import React from "react";
 
-import Accordion from "../../accordion/Accordion";
 import Page from "../../page/Page";
 
 const WhatWeDo: React.FC = () => {
@@ -16,57 +15,21 @@ const WhatWeDo: React.FC = () => {
 const Aside = (
     <React.Fragment>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-            itaque dolores error sapiente eveniet doloribus culpa at nisi
-            corrupti vel veritatis eum quaerat qui ratione quidem, tenetur
-            laudantium autem? Maiores?
+            We are a Berlin-based yet international constellation of creatives
+            developing and conceptualizing events and experiences customized to
+            clients and brands.
         </p>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-            itaque dolores error sapiente eveniet doloribus culpa at nisi
-            corrupti vel veritatis.
+            We want to connect purpose-driven companies to communities, artists
+            and professionals that are helping to reshape the local and global
+            scene towards a future of awareness and inclusion.
         </p>
-        <h2>Capabilities:</h2>
-        <div className="accordion">
-            <Accordion
-                id={1}
-                title="Event Conceptualization & Execution"
-                content={[
-                    "Brand Strategie",
-                    "Budgeting",
-                    "Creative Ideation",
-                    "Guest Curation",
-                    "Leading Vendors",
-                    "On Site Management",
-                ]}
-            />
-            <Accordion
-                id={2}
-                title="Project Management"
-                content={["Lorem", "Ipsum", "Dolor", "Set"]}
-            />
-            <Accordion
-                id={3}
-                title="Community Management"
-                content={["Lorem", "Ipsum", "Dolor", "Set"]}
-            />
-            <Accordion
-                id={4}
-                title="Experience Management"
-                content={["Lorem", "Ipsum", "Dolor", "Set"]}
-            />
-            <Accordion
-                id={5}
-                title="Scouting & Casting"
-                content={["Lorem", "Ipsum", "Dolor", "Set"]}
-            />
-        </div>
     </React.Fragment>
 );
 
 const Main = (
     <div className="WhatWeDo h-100 d-flex flex-column justify-content-center align-items-center">
-        <img src="/assets/elan" alt="ELAN" />
+        <img src="/assets/elan.png" alt="ELAN" />
     </div>
 );
 

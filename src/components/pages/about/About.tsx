@@ -18,23 +18,27 @@ const About: React.FC = () => {
 const Aside = (
     <React.Fragment>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-            itaque dolores error sapiente eveniet doloribus culpa at nisi
-            corrupti vel veritatis eum quaerat qui ratione quidem, tenetur
-            laudantium autem? Maiores?
+            ELAN was born out of the need to challenge existing power dynamics
+            and the traditional flow of knowledge that exists in both the
+            corporate world and the cultural zeitgeist.
         </p>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-            itaque dolores error sapiente eveniet doloribus culpa at nisi
-            corrupti vel veritatis. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. At nisi corrupti vel veritatis eum quaerat qui
-            ratione quidem, tenetur laudantium autem? Maiores?
+            User adoption is often thought of as a challenge for businesses to
+            try to find product market fit. How do they do it? They listen to
+            their customers but in the end what dictates their decisions is a
+            preexisting idea of who their customer should be. We at ELAN don’t
+            believe in what consumers should be or shouldn’t be. We believe that
+            products and its messaging need to shift to fit this newer world.
         </p>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-            itaque dolores error sapiente eveniet doloribus culpa at nisi
-            corrupti vel veritatis eum quaerat qui ratione quidem, tenetur
-            laudantium autem? Maiores?
+            Additionally, we know that the mechanism for this dual change has to
+            come through exposure to diversity & inclusion, giving something
+            back to the community and supporting the local scene.
+        </p>
+        <p>The unnegotiable.</p>
+        <p>
+            The clients we work with embrace &#8212; or are open to embracing
+            &#8212; this changing world wholeheartedly.
         </p>
     </React.Fragment>
 );

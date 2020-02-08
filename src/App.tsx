@@ -22,38 +22,50 @@ interface IChangeObject {
 
 const App: React.FC = () => {
     const [menuIsOpen, setMenuIsOpen] = useState(false);
+    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+    const [scrollMode, setScrollMode] = useState<"full-page" | "normal">(
+        "full-page",
+    );
+    const [isOverList, setIsOverList] = useState(false);
 
     const fullPageRef = useRef<any>();
 
-    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-
-    const onDown = (e: any) => {
-        switch (e.keyCode) {
-            case 38: // down
-                e.preventDefault();
-                if (currentSlideIndex - 1 >= 0) {
-                    onControlsClick(currentSlideIndex - 1);
-                }
-                return;
-
-            case 40: // up
-                e.preventDefault();
-                if (currentSlideIndex + 1 < routes.length) {
-                    onControlsClick(currentSlideIndex + 1);
-                }
-                return;
-
-            default:
-                return;
+    useEffect(() => {
+        if (currentSlideIndex === 2 && isOverList) {
+            setScrollMode("normal");
+        } else {
+            setScrollMode("full-page");
         }
-    };
+    }, [currentSlideIndex, isOverList]);
 
     useEffect(() => {
+        const onDown = (e: any) => {
+            switch (e.keyCode) {
+                case 38: // down
+                    e.preventDefault();
+                    if (currentSlideIndex - 1 >= 0) {
+                        onControlsClick(currentSlideIndex - 1);
+                    }
+                    return;
+
+                case 40: // up
+                    e.preventDefault();
+                    if (currentSlideIndex + 1 < routes.length) {
+                        onControlsClick(currentSlideIndex + 1);
+                    }
+                    return;
+
+                default:
+                    return;
+            }
+        };
+
         document.addEventListener("keydown", onDown);
+
         return () => {
             document.removeEventListener("keydown", onDown);
         };
-    });
+    }, [currentSlideIndex]);
 
     useEffect(() => {
         const vh = window.innerHeight * 0.01;
@@ -107,7 +119,7 @@ const App: React.FC = () => {
                                     <WhatWeDo />
                                 </div>
                                 <div id={"work"}>
-                                    <Work />
+                                    <Work setIsOverList={setIsOverList} />
                                 </div>
                                 <div id={"our-network"}>
                                     <OurNetwork />
@@ -129,6 +141,7 @@ const App: React.FC = () => {
                         ref={fullPageRef}
                         controls={Navbar}
                         afterChange={onAfterChange}
+                        scrollMode={scrollMode}
                     >
                         <Slide id={"home"}>
                             <Home />
@@ -137,7 +150,7 @@ const App: React.FC = () => {
                             <WhatWeDo />
                         </Slide>
                         <Slide id={"work"}>
-                            <Work />
+                            <Work setIsOverList={setIsOverList} />
                         </Slide>
                         <Slide id={"our-network"}>
                             <OurNetwork />

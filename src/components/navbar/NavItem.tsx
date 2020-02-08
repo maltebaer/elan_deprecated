@@ -3,7 +3,7 @@ import "./NavItem.scss";
 import React from "react";
 
 import {routes} from "../../App";
-import VerticalBar from "../VerticalBar";
+import VerticalBar from "../vertical-bar/VerticalBar";
 
 interface INavItemProps {
     index: number;

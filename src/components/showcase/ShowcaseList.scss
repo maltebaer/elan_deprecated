@@ -1,6 +1,7 @@
 @use "./src/index";
 
 .ShowcaseList {
+    display: inline-block;
     list-style: none;
     padding: 0 0 0 1rem;
 
@@ -17,7 +18,7 @@
         background: #000;
     }
 
-    mask-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+    mask-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
     -webkit-mask-image: -webkit-gradient(
         linear,
         left top,
@@ -34,7 +35,7 @@
         padding-bottom: 1rem;
     }
 
-    a {
+    button {
         text-transform: uppercase;
         font-size: 2.5rem;
         cursor: pointer;
@@ -43,7 +44,7 @@
     @include index.media-breakpoint-down(lg) {
         height: 30vh;
 
-        a {
+        button {
             font-size: 2rem;
         }
     }

@@ -14,7 +14,16 @@ const OurNetwork: React.FC = () => {
     );
 };
 
-const Aside = <ContactForm />;
+const Aside = (
+    <React.Fragment>
+        <p>
+            Do you need help with any upcoming project or would you like to be
+            part of our community of creatives? Reach out to us &#8212; we are
+            always open to meaningful collaborations.
+        </p>
+        <ContactForm />
+    </React.Fragment>
+);
 
 const Main = (
     <div className="OurNetwork h-100">
