@@ -13,7 +13,6 @@ interface IShowcaseListProps {
 const ShowcaseList: React.FC<IShowcaseListProps> = (props) => {
     const clients: Clients[] = [
         "boiler-room",
-        "integr8",
         "melt",
         "moxy",
         "scopes",
@@ -21,6 +20,7 @@ const ShowcaseList: React.FC<IShowcaseListProps> = (props) => {
         "the-standard",
         "twitter",
         "whole",
+        "integr8",
     ];
     const items = clients.map((x, idx) => (
         <li

@@ -8,14 +8,14 @@ import ShowcaseList from "../../showcase/ShowcaseList";
 
 export type Clients =
     | "boiler-room"
-    | "integr8"
     | "melt"
     | "moxy"
     | "scopes"
     | "soundcloud"
     | "the-standard"
     | "twitter"
-    | "whole";
+    | "whole"
+    | "integr8";
 
 interface IWorkProps {
     setIsOverList: (isOver: boolean) => void;
@@ -32,7 +32,7 @@ const Work: React.FC<IWorkProps> = (props) => {
 const Aside = (
     <React.Fragment>
         <h2>Event Conceptualization & Execution including B2B & B2C:</h2>
-        <ul>
+        <ul id="work-list">
             <li>Brand Strategy</li>
             <li>Creative Research</li>
             <li>Creative Ideation</li>
