@@ -1,6 +1,7 @@
 @use "./src/index";
 
 .ShowcaseList {
+    display: inline-block;
     list-style: none;
     padding: 0 0 0 1rem;
 
@@ -17,7 +18,7 @@
         background: #000;
     }
 
-    mask-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+    mask-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3));
     -webkit-mask-image: -webkit-gradient(
         linear,
         left top,

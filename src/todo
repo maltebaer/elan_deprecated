@@ -8,6 +8,7 @@
 - imprint content
 
 ## what we do ##
+- update Accordion to only show one open item
 - content
 - resize elan img
 
@@ -15,9 +16,6 @@
 - content (text)
 - complete client portfolios
 - reverse gradient on list
-- scrollable area
-    - scrollMode: full-page/normal
-    - onmousemove = function(e){console.log("mouse location:", e.clientX, e.clientY)}
 
 ## our network ##
 - setup emailjs credentials

@@ -17,10 +17,14 @@ export type Clients =
     | "twitter"
     | "whole";
 
-const Work: React.FC = () => {
+interface IWorkProps {
+    setIsOverList: (isOver: boolean) => void;
+}
+
+const Work: React.FC<IWorkProps> = (props) => {
     return (
         <Page title="Work" aside={Aside}>
-            <Main />
+            <Main setIsOverList={props.setIsOverList} />
         </Page>
     );
 };
@@ -46,7 +50,11 @@ const Aside = (
     </React.Fragment>
 );
 
-const Main: React.FC = () => {
+interface IMainProps {
+    setIsOverList: (isOver: boolean) => void;
+}
+
+const Main: React.FC<IMainProps> = (props) => {
     const [openModalId, setOpenModalId] = useState<Clients | null>(null);
 
     const onModalToggle = (id: Clients) => {
@@ -65,6 +73,7 @@ const Main: React.FC = () => {
             <ShowcaseList
                 openModalId={openModalId}
                 onModalToggle={onModalToggle}
+                setIsOverList={props.setIsOverList}
             />
             {openModalId && (
                 <Showcase id={openModalId} onModalClose={onModalClose} />

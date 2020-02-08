@@ -7,6 +7,7 @@ interface IShowcaseListProps {
     openModalId: Clients | null;
 
     onModalToggle: (id: Clients) => void;
+    setIsOverList: (isOver: boolean) => void;
 }
 
 const ShowcaseList: React.FC<IShowcaseListProps> = (props) => {
@@ -30,7 +31,13 @@ const ShowcaseList: React.FC<IShowcaseListProps> = (props) => {
         </li>
     ));
     return (
-        <ul className="ShowcaseList scrollbar">
+        <ul
+            className="ShowcaseList scrollbar"
+            // tslint:disable-next-line: jsx-no-lambda
+            onMouseEnter={() => props.setIsOverList(true)}
+            // tslint:disable-next-line: jsx-no-lambda
+            onMouseLeave={() => props.setIsOverList(false)}
+        >
             <div className="gradient">{items}</div>
         </ul>
     );
