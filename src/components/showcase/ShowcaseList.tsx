@@ -26,12 +26,7 @@ const ShowcaseList: React.FC<IShowcaseListProps> = (props) => {
             key={idx}
             className={props.openModalId === x ? "active" : undefined}
         >
-            <a
-                // tslint:disable-next-line: jsx-no-lambda
-                onClick={() => props.onModalToggle(x)}
-            >
-                {x.replace(/-/g, " ")}
-            </a>
+            <a onClick={() => props.onModalToggle(x)}>{x.replace(/-/g, " ")}</a>
         </li>
     ));
     return (
