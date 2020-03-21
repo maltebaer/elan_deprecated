@@ -56,17 +56,14 @@ const App: React.FC = () => {
                 switch (orientation.type) {
                     case "portrait-primary":
                     case "portrait-secondary":
-                        console.log("portrait");
                         setIsPortrait(true);
                         break;
                     case "landscape-primary":
                     case "landscape-secondary":
-                        console.log("landscape");
                         setIsPortrait(false);
                         break;
                     default:
                         setIsPortrait(true);
-                        console.log("default (screen.orientation)");
                 }
 
                 return;
@@ -76,17 +73,14 @@ const App: React.FC = () => {
             switch (screenOrientation) {
                 case 0:
                 case 180:
-                    console.log("portrait");
                     setIsPortrait(true);
                     break;
                 case 90:
                 case -90:
-                    console.log("landscape");
                     setIsPortrait(false);
                     break;
                 default:
                     setIsPortrait(true);
-                    console.log("default (window.orientation)");
             }
         };
         window.addEventListener("orientationchange", checkOrientationChange);

@@ -16,6 +16,7 @@ const ContactForm: React.FC = () => {
     const [errMessage, setErrMessage] = useState("");
 
     const [emailSend, setEmailSend] = useState(false);
+    const [emailSendErr, setEmailSendErr] = useState(false);
 
     useEffect(() => {
         emailjs.init(process.env.REACT_APP_EMAILJS_USERID!);
@@ -85,9 +86,11 @@ const ContactForm: React.FC = () => {
                 setErrLocation("");
                 setErrMessage("");
             })
-            .catch((err: any) =>
-                console.error("Failed to send message. Error: ", err),
-            );
+            .catch((err: any) => {
+                console.error("Failed to send message. Error: ", err);
+                setEmailSendErr(true);
+                setTimeout(() => setEmailSendErr(false), 3000);
+            });
     };
 
     return (
@@ -156,6 +159,15 @@ const ContactForm: React.FC = () => {
                         </div>
                     ) : (
                         <div>Message successfully sent!</div>
+                    )}
+                </div>
+            )}
+            {emailSendErr && (
+                <div className="d-flex justify-content-center">
+                    {isMobile || isIOS13 ? (
+                        <div className="success">Message failed to sent!</div>
+                    ) : (
+                        <div>Message failed to sent!</div>
                     )}
                 </div>
             )}
