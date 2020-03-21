@@ -31,23 +31,19 @@ const Work: React.FC<IWorkProps> = (props) => {
 
 const Aside = (
     <React.Fragment>
-        <h2>Event Conceptualization & Execution including B2B & B2C:</h2>
-        <ul id="work-list">
-            <li>Brand Strategy</li>
-            <li>Creative Research</li>
-            <li>Creative Ideation</li>
-            <li>Budgeting </li>
-            <li>Project Management</li>
-            <li>Pre-Production</li>
+        B2B and B2C Event Conceptualization and Execution, including:
+        <ul className="mt-2" id="work-list">
+            <li>Brand Strategy, Creative Research, and Creative Ideation</li>
+            <li>Budgeting and Project Management</li>
             <li>Guest and Venue Curation</li>
-            <li>Leading Vendors</li>
-            <li>Sponsorships & Partnerships</li>
-            <li>On Site Management</li>
-            <li>Social Media Coverage</li>
-            <li>Experience Management</li>
-            <li>Post-Event Breakdown</li>
-            <li>Talent Procurement</li>
+            <li>Vendor and Talent Procurement</li>
+            <li>Sponsorships and Partnerships</li>
+            <li>On Site Facilities and Experience Management</li>
+            <li>Pre-Production and Post-Event Breakdown</li>
+            <li>Pre-Event and Post-Event Social Media Coverage</li>
         </ul>
+        <br />
+        Explore some of our projects by clicking on the client's name.
     </React.Fragment>
 );
 

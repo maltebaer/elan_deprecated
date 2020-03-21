@@ -150,53 +150,60 @@ const App: React.FC = () => {
         setMobileMenuIsOpen(false);
     };
 
-    return !isPortrait ? (
-        <div className="mt-5 d-flex justify-content-center align-items-center">
-            <h2>To ensure the best experience, please rotate your device.</h2>
-        </div>
-    ) : (
+    return (
         <React.Fragment>
             {isMobile || isIOS13 ? (
-                <React.Fragment>
-                    {mobileMenuIsOpen ? (
-                        <div
-                            id="menu"
-                            className="mobile-height padding-y bg-dark text-white"
-                        >
-                            <div className="container-fluid d-flex flex-column justify-content-between h-100">
-                                <MobileHeader toggleMobileMenu={toggleMenu} />
-                                <MobileMenu onCloseMenu={closeMenu} />
-                            </div>
-                        </div>
-                    ) : (
-                        <React.Fragment>
-                            <div className="mobile-height padding-y">
-                                <div className="container-fluid">
+                !isPortrait ? (
+                    <div className="mt-5 d-flex justify-content-center align-items-center">
+                        <h2>
+                            To ensure the best experience, please rotate your
+                            device.
+                        </h2>
+                    </div>
+                ) : (
+                    <React.Fragment>
+                        {mobileMenuIsOpen ? (
+                            <div
+                                id="menu"
+                                className="mobile-height padding-y bg-dark text-white"
+                            >
+                                <div className="container-fluid d-flex flex-column justify-content-between h-100">
                                     <MobileHeader
                                         toggleMobileMenu={toggleMenu}
                                     />
-                                </div>
-                                <div id={"home"} className="h-100">
-                                    <Home />
+                                    <MobileMenu onCloseMenu={closeMenu} />
                                 </div>
                             </div>
-                            <div className="container-fluid">
-                                <div id={"what-we-do"}>
-                                    <WhatWeDo />
+                        ) : (
+                            <React.Fragment>
+                                <div className="mobile-height padding-y">
+                                    <div className="container-fluid">
+                                        <MobileHeader
+                                            toggleMobileMenu={toggleMenu}
+                                        />
+                                    </div>
+                                    <div id={"home"} className="h-100">
+                                        <Home />
+                                    </div>
                                 </div>
-                                <div id={"work"}>
-                                    <Work setIsOverList={setIsOverList} />
+                                <div className="container-fluid">
+                                    <div id={"what-we-do"}>
+                                        <WhatWeDo />
+                                    </div>
+                                    <div id={"work"}>
+                                        <Work setIsOverList={setIsOverList} />
+                                    </div>
+                                    <div id={"our-network"}>
+                                        <OurNetwork />
+                                    </div>
+                                    <div id={"about"}>
+                                        <About />
+                                    </div>
                                 </div>
-                                <div id={"our-network"}>
-                                    <OurNetwork />
-                                </div>
-                                <div id={"about"}>
-                                    <About />
-                                </div>
-                            </div>
-                        </React.Fragment>
-                    )}
-                </React.Fragment>
+                            </React.Fragment>
+                        )}
+                    </React.Fragment>
+                )
             ) : (
                 <div className="container-fluid">
                     <Header

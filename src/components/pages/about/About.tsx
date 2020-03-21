@@ -20,15 +20,16 @@ const Aside = (
         <p>
             ELAN was born out of the need to challenge existing power dynamics
             and the traditional flow of knowledge that exists in both the
-            corporate world and the cultural zeitgeist.
+            corporate world and the cultural zeitgeist. .
         </p>
         <p>
             User adoption is often thought of as a challenge for businesses to
             try to find product market fit. How do they do it? They listen to
-            their customers but in the end what dictates their decisions is a
+            their customers, but in the end what dictates their decisions is a
             preexisting idea of who their customer should be. We at ELAN don’t
             believe in what consumers should be or shouldn’t be. We believe that
-            products and its messaging need to shift to fit this newer world.
+            products and their messaging need to shift to fit this newer,
+            emerging world.
         </p>
         <p>
             Additionally, we know that the mechanism for this dual change has to
