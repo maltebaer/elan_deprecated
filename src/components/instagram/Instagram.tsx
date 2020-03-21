@@ -14,7 +14,7 @@ const Instagram: React.FC = () => {
                 <span className="cta">
                     Follow{" "}
                     <a
-                        href="https://www.instagram.com/elan.berlin/"
+                        href="https://www.instagram.com/elanberlin/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

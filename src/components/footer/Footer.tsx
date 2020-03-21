@@ -4,7 +4,11 @@ import Imprint from "../imprint/Imprint";
 import Mail from "../mail/Mail";
 import SocialLinks from "../social-links/SocialLinks";
 
-const Footer: React.FC = () => {
+interface IFooterProps {
+    onImprintToggle: (isOpen: boolean) => void;
+}
+
+const Footer: React.FC<IFooterProps> = (props) => {
     return (
         <div className="margin-y padding-x nav-height fixed-bottom">
             <div className="h-100 nav d-flex justify-content-between">
@@ -15,7 +19,7 @@ const Footer: React.FC = () => {
                     <SocialLinks />
                 </span>
                 <span className="fixed-width d-flex justify-content-end align-items-center">
-                    <Imprint />
+                    <Imprint onImprintToggle={props.onImprintToggle} />
                 </span>
             </div>
         </div>

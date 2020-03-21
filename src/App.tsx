@@ -21,14 +21,24 @@ interface IChangeObject {
 }
 
 const App: React.FC = () => {
-    const [menuIsOpen, setMenuIsOpen] = useState(false);
+    const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [scrollMode, setScrollMode] = useState<"full-page" | "normal">(
         "full-page",
     );
     const [isOverList, setIsOverList] = useState(false);
+    const [fullPageScrollDisabled, setFullPageScrollDisabled] = useState(false);
+    const [isPortrait, setIsPortrait] = useState(true);
 
     const fullPageRef = useRef<any>();
+
+    useEffect(() => {
+        if (fullPageScrollDisabled) {
+            setScrollMode("normal");
+        } else {
+            setScrollMode("full-page");
+        }
+    }, [fullPageScrollDisabled]);
 
     useEffect(() => {
         if (currentSlideIndex === 2 && isOverList) {
@@ -37,6 +47,58 @@ const App: React.FC = () => {
             setScrollMode("full-page");
         }
     }, [currentSlideIndex, isOverList]);
+
+    useEffect(() => {
+        const checkOrientationChange = () => {
+            // eslint-disable-next-line no-restricted-globals
+            const orientation = screen.orientation;
+            if (orientation) {
+                switch (orientation.type) {
+                    case "portrait-primary":
+                    case "portrait-secondary":
+                        console.log("portrait");
+                        setIsPortrait(true);
+                        break;
+                    case "landscape-primary":
+                    case "landscape-secondary":
+                        console.log("landscape");
+                        setIsPortrait(false);
+                        break;
+                    default:
+                        setIsPortrait(true);
+                        console.log("default (screen.orientation)");
+                }
+
+                return;
+            }
+
+            const screenOrientation = window.orientation;
+            switch (screenOrientation) {
+                case 0:
+                case 180:
+                    console.log("portrait");
+                    setIsPortrait(true);
+                    break;
+                case 90:
+                case -90:
+                    console.log("landscape");
+                    setIsPortrait(false);
+                    break;
+                default:
+                    setIsPortrait(true);
+                    console.log("default (window.orientation)");
+            }
+        };
+        window.addEventListener("orientationchange", checkOrientationChange);
+        checkOrientationChange();
+
+        return () => {
+            window.removeEventListener(
+                "orientationchange",
+                checkOrientationChange,
+            );
+        };
+    });
 
     useEffect(() => {
         const onDown = (e: any) => {
@@ -82,17 +144,21 @@ const App: React.FC = () => {
     };
 
     const toggleMenu = () => {
-        setMenuIsOpen(!menuIsOpen);
+        setMobileMenuIsOpen(!mobileMenuIsOpen);
     };
     const closeMenu = () => {
-        setMenuIsOpen(false);
+        setMobileMenuIsOpen(false);
     };
 
-    return (
+    return !isPortrait ? (
+        <div className="mt-5 d-flex justify-content-center align-items-center">
+            <h2>To ensure the best experience, please rotate your device.</h2>
+        </div>
+    ) : (
         <React.Fragment>
             {isMobile || isIOS13 ? (
                 <React.Fragment>
-                    {menuIsOpen ? (
+                    {mobileMenuIsOpen ? (
                         <div
                             id="menu"
                             className="mobile-height padding-y bg-dark text-white"
@@ -159,7 +225,7 @@ const App: React.FC = () => {
                             <About />
                         </Slide>
                     </FullPage>
-                    <Footer />
+                    <Footer onImprintToggle={setFullPageScrollDisabled} />
                 </div>
             )}
         </React.Fragment>

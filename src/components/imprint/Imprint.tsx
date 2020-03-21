@@ -1,10 +1,32 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {isMobile} from "react-device-detect";
 
-const Imprint: React.FC = () => {
+interface IImprintProps {
+    onImprintToggle?: (isOpen: boolean) => void;
+}
+
+const Imprint: React.FC<IImprintProps> = (props) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const onImprintToggle = props.onImprintToggle
+        ? props.onImprintToggle
+        : (foo: boolean) => null;
+
+    useEffect(() => {
+        if (isOpen) {
+            onImprintToggle(true);
+        } else {
+            onImprintToggle(false);
+        }
+    }, [isOpen, onImprintToggle]);
+
+    const toggleImprint = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <span className={isMobile ? "small" : undefined}>
-            <a href="#imprint" data-toggle="modal">
+            <a href="#imprint" data-toggle="modal" onClick={toggleImprint}>
                 Imprint
             </a>
             <div
