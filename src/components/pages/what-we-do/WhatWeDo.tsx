@@ -15,12 +15,11 @@ const WhatWeDo: React.FC = () => {
 const Aside = (
     <React.Fragment>
         <p>
-            We are a Berlin-based yet international constellation of creatives
-            developing and conceptualizing events and experiences customized to
-            clients and brands.
+            We are a Berlin-based, international constellation of creatives
+            developing customized events and experiences for clients and brands.
         </p>
         <p>
-            We want to connect purpose-driven companies to communities, artists
+            We want to connect purpose-driven companies to communities, artists,
             and professionals that are helping to reshape the local and global
             scene towards a future of awareness and inclusion.
         </p>

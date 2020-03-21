@@ -22,7 +22,7 @@ const SocialLinks: React.FC<ISocialLinksProps> = (props) => {
             <HorizontalBar large isHeader={props.isHeader} />
             <span className={isMobile ? "small" : undefined}>
                 <a
-                    href="https://www.instagram.com/elan.berlin/"
+                    href="https://www.instagram.com/elanberlin/"
                     target="_blank"
                     rel="noopener noreferrer"
                 >

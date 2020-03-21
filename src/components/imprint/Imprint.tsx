@@ -1,10 +1,41 @@
-import React from "react";
+import $ from "jquery";
+import React, {useEffect, useState} from "react";
 import {isMobile} from "react-device-detect";
 
-const Imprint: React.FC = () => {
+interface IImprintProps {
+    onImprintToggle?: (isOpen: boolean) => void;
+}
+
+const Imprint: React.FC<IImprintProps> = (props) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        $("#imprint").on("hidden.bs.modal", (e: any) => {
+            onImprintToggle(false);
+        });
+    });
+
+    const onImprintToggle = props.onImprintToggle
+        ? props.onImprintToggle
+        : () => null;
+
+    const disableFullPageScroll = () => setIsOpen(true);
+
+    useEffect(() => {
+        if (isOpen) {
+            onImprintToggle(true);
+        } else {
+            onImprintToggle(false);
+        }
+    }, [isOpen, onImprintToggle]);
+
     return (
         <span className={isMobile ? "small" : undefined}>
-            <a href="#imprint" data-toggle="modal">
+            <a
+                href="#imprint"
+                data-toggle="modal"
+                onClick={disableFullPageScroll}
+            >
                 Imprint
             </a>
             <div

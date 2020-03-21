@@ -21,14 +21,24 @@ interface IChangeObject {
 }
 
 const App: React.FC = () => {
-    const [menuIsOpen, setMenuIsOpen] = useState(false);
+    const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [scrollMode, setScrollMode] = useState<"full-page" | "normal">(
         "full-page",
     );
     const [isOverList, setIsOverList] = useState(false);
+    const [fullPageScrollDisabled, setFullPageScrollDisabled] = useState(false);
+    const [isPortrait, setIsPortrait] = useState(true);
 
     const fullPageRef = useRef<any>();
+
+    useEffect(() => {
+        if (fullPageScrollDisabled) {
+            setScrollMode("normal");
+        } else {
+            setScrollMode("full-page");
+        }
+    }, [fullPageScrollDisabled]);
 
     useEffect(() => {
         if (currentSlideIndex === 2 && isOverList) {
@@ -37,6 +47,52 @@ const App: React.FC = () => {
             setScrollMode("full-page");
         }
     }, [currentSlideIndex, isOverList]);
+
+    useEffect(() => {
+        const checkOrientationChange = () => {
+            // eslint-disable-next-line no-restricted-globals
+            const orientation = screen.orientation;
+            if (orientation) {
+                switch (orientation.type) {
+                    case "portrait-primary":
+                    case "portrait-secondary":
+                        setIsPortrait(true);
+                        break;
+                    case "landscape-primary":
+                    case "landscape-secondary":
+                        setIsPortrait(false);
+                        break;
+                    default:
+                        setIsPortrait(true);
+                }
+
+                return;
+            }
+
+            const screenOrientation = window.orientation;
+            switch (screenOrientation) {
+                case 0:
+                case 180:
+                    setIsPortrait(true);
+                    break;
+                case 90:
+                case -90:
+                    setIsPortrait(false);
+                    break;
+                default:
+                    setIsPortrait(true);
+            }
+        };
+        window.addEventListener("orientationchange", checkOrientationChange);
+        checkOrientationChange();
+
+        return () => {
+            window.removeEventListener(
+                "orientationchange",
+                checkOrientationChange,
+            );
+        };
+    });
 
     useEffect(() => {
         const onDown = (e: any) => {
@@ -82,55 +138,66 @@ const App: React.FC = () => {
     };
 
     const toggleMenu = () => {
-        setMenuIsOpen(!menuIsOpen);
+        setMobileMenuIsOpen(!mobileMenuIsOpen);
     };
     const closeMenu = () => {
-        setMenuIsOpen(false);
+        setMobileMenuIsOpen(false);
     };
 
     return (
         <React.Fragment>
             {isMobile || isIOS13 ? (
-                <React.Fragment>
-                    {menuIsOpen ? (
-                        <div
-                            id="menu"
-                            className="mobile-height padding-y bg-dark text-white"
-                        >
-                            <div className="container-fluid d-flex flex-column justify-content-between h-100">
-                                <MobileHeader toggleMobileMenu={toggleMenu} />
-                                <MobileMenu onCloseMenu={closeMenu} />
-                            </div>
-                        </div>
-                    ) : (
-                        <React.Fragment>
-                            <div className="mobile-height padding-y">
-                                <div className="container-fluid">
+                !isPortrait ? (
+                    <div className="mt-5 d-flex justify-content-center align-items-center">
+                        <h2>
+                            To ensure the best experience, please rotate your
+                            device.
+                        </h2>
+                    </div>
+                ) : (
+                    <React.Fragment>
+                        {mobileMenuIsOpen ? (
+                            <div
+                                id="menu"
+                                className="mobile-height padding-y bg-dark text-white"
+                            >
+                                <div className="container-fluid d-flex flex-column justify-content-between h-100">
                                     <MobileHeader
                                         toggleMobileMenu={toggleMenu}
                                     />
-                                </div>
-                                <div id={"home"} className="h-100">
-                                    <Home />
+                                    <MobileMenu onCloseMenu={closeMenu} />
                                 </div>
                             </div>
-                            <div className="container-fluid">
-                                <div id={"what-we-do"}>
-                                    <WhatWeDo />
+                        ) : (
+                            <React.Fragment>
+                                <div className="mobile-height padding-y">
+                                    <div className="container-fluid">
+                                        <MobileHeader
+                                            toggleMobileMenu={toggleMenu}
+                                        />
+                                    </div>
+                                    <div id={"home"} className="h-100">
+                                        <Home />
+                                    </div>
                                 </div>
-                                <div id={"work"}>
-                                    <Work setIsOverList={setIsOverList} />
+                                <div className="container-fluid">
+                                    <div id={"what-we-do"}>
+                                        <WhatWeDo />
+                                    </div>
+                                    <div id={"work"}>
+                                        <Work setIsOverList={setIsOverList} />
+                                    </div>
+                                    <div id={"our-network"}>
+                                        <OurNetwork />
+                                    </div>
+                                    <div id={"about"}>
+                                        <About />
+                                    </div>
                                 </div>
-                                <div id={"our-network"}>
-                                    <OurNetwork />
-                                </div>
-                                <div id={"about"}>
-                                    <About />
-                                </div>
-                            </div>
-                        </React.Fragment>
-                    )}
-                </React.Fragment>
+                            </React.Fragment>
+                        )}
+                    </React.Fragment>
+                )
             ) : (
                 <div className="container-fluid">
                     <Header
@@ -159,7 +226,7 @@ const App: React.FC = () => {
                             <About />
                         </Slide>
                     </FullPage>
-                    <Footer />
+                    <Footer onImprintToggle={setFullPageScrollDisabled} />
                 </div>
             )}
         </React.Fragment>
