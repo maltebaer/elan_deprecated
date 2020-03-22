@@ -31,8 +31,8 @@ const Work: React.FC<IWorkProps> = (props) => {
 
 const Aside = (
     <React.Fragment>
-        B2B and B2C Event Conceptualization and Execution, including:
-        <ul className="mt-2" id="work-list">
+        <p>B2B and B2C Event Conceptualization and Execution, including:</p>
+        <ul id="work-list">
             <li>Brand Strategy, Creative Research, and Creative Ideation</li>
             <li>Budgeting and Project Management</li>
             <li>Guest and Venue Curation</li>
@@ -43,7 +43,7 @@ const Aside = (
             <li>Pre-Event and Post-Event Social Media Coverage</li>
         </ul>
         <br />
-        Explore some of our projects by clicking on the client's name.
+        <p>Explore some of our projects by clicking on the client's name.</p>
     </React.Fragment>
 );
 
