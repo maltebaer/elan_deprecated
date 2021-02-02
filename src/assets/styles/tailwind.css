@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply mb-8 uppercase line-through;
+  }
+
+  p {
+    @apply mb-4;
+  }
+}
+
+@layer components {
+  .base-nav {
+    @apply hidden md:flex absolute h-16 px-16 flex-col justify-center;
+  }
+
+  .base-nav-vertical {
+    @apply hidden md:block absolute;
+  }
+}
