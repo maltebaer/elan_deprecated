@@ -1,6 +1,6 @@
 <template>
   <nav class="base-nav-vertical top-0 right-16 bottom-0 border border-red-400">
-    <ul class="h-full flex flex-col justify-center">
+    <ul class="h-full flex flex-col justify-center space-y-4">
       <li class="inline-block">
         <a href="#home">1</a>
       </li>

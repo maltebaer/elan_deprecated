@@ -6,17 +6,17 @@
           <a href="#home">Logo</a>
         </li>
       </span>
-      <span>
+      <span class="space-x-4">
         <li class="inline-block">
           <a href="#what-we-do">What We Do</a>
         </li>
-        <li class="ml-4 inline-block">
+        <li class="inline-block">
           <a href="#work">Work</a>
         </li>
-        <li class="ml-4 inline-block">
+        <li class="inline-block">
           <a href="#our-network">Our Network</a>
         </li>
-        <li class="ml-4 inline-block">
+        <li class="inline-block">
           <a href="#about">About</a>
         </li>
       </span>

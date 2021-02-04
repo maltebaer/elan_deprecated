@@ -1,14 +1,14 @@
 <template>
-  <side-nav />
-  <main-nav />
+  <SideNav />
+  <MainNav />
   <div class="scroll-container">
-    <page id="home">
+    <Page id="home">
       <main>
         <h1 class="text-center">Home</h1>
       </main>
-    </page>
-    <page id="what-we-do">
-      <layout>
+    </Page>
+    <Page id="what-we-do">
+      <Layout>
         <template v-slot:main>
           <h1>What we do</h1>
           <p>
@@ -24,10 +24,10 @@
         <template v-slot:aside>
           <h1 class="text-center">Image</h1>
         </template>
-      </layout>
-    </page>
-    <page id="work">
-      <layout>
+      </Layout>
+    </Page>
+    <Page id="work">
+      <Layout>
         <template v-slot:main>
           <h1>Work</h1>
           <p>B2B and B2C Event Conceptualization and Execution, including:</p>
@@ -47,10 +47,10 @@
         <template v-slot:aside>
           <h1 class="text-center">Showcase</h1>
         </template>
-      </layout>
-    </page>
-    <page id="our-network">
-      <layout>
+      </Layout>
+    </Page>
+    <Page id="our-network">
+      <Layout>
         <template v-slot:main>
           <h1>Our Network</h1>
           <p>
@@ -62,10 +62,10 @@
         <template v-slot:aside>
           <h1 class="text-center">Instagram</h1>
         </template>
-      </layout>
-    </page>
-    <page id="about">
-      <layout>
+      </Layout>
+    </Page>
+    <Page id="about">
+      <Layout>
         <template v-slot:main>
           <h1>About</h1>
           <p>
@@ -100,10 +100,10 @@
         <template v-slot:aside>
           <h1 class="text-center">Portraits</h1>
         </template>
-      </layout>
-    </page>
+      </Layout>
+    </Page>
   </div>
-  <custom-footer />
+  <Footer />
 </template>
 
 <script lang="ts">
@@ -113,7 +113,7 @@ import Page from "./components/Page.vue";
 import Layout from "./components/Layout.vue";
 import MainNav from "./components/MainNav.vue";
 import SideNav from "./components/SideNav.vue";
-import CustomFooter from "./components/CustomFooter.vue";
+import Footer from "./components/Footer.vue";
 
 export default defineComponent({
   name: "App",
@@ -123,7 +123,7 @@ export default defineComponent({
     Layout,
     MainNav,
     SideNav,
-    CustomFooter,
+    Footer,
   },
 });
 </script>

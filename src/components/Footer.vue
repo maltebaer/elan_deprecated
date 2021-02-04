@@ -6,19 +6,17 @@
           <a href="mailto:hello@elanberlin.com">hello@elanberlin.com</a>
         </li>
       </span>
-      <span>
+      <span class="space-x-4">
         <li class="inline-block">
           <a href="https://www.linkedin.com/company/elanberlin/">LinkedIn</a>
         </li>
-        <li class="ml-4 inline-block">
+        <li class="inline-block">
           <a href="https://www.instagram.com/elanberlin/">Instagram</a>
         </li>
       </span>
       <span class="w-48 text-right">
         <li class="inline-block">
-          <button>
-            Imprint
-          </button>
+          <button>Imprint</button>
         </li>
       </span>
     </ul>
