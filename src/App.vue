@@ -10,9 +10,7 @@
     <page id="what-we-do">
       <layout>
         <template v-slot:main>
-          <h1>
-            What we do
-          </h1>
+          <h1>What we do</h1>
           <p>
             We are a Berlin-based, international constellation of creatives
             developing customized events and experiences for clients and brands.
@@ -31,12 +29,8 @@
     <page id="work">
       <layout>
         <template v-slot:main>
-          <h1>
-            Work
-          </h1>
-          <p>
-            B2B and B2C Event Conceptualization and Execution, including:
-          </p>
+          <h1>Work</h1>
+          <p>B2B and B2C Event Conceptualization and Execution, including:</p>
           <ul class="work-list list-square list-outside">
             <li>Brand Strategy, Creative Research, and Creative Ideation</li>
             <li>Budgeting and Project Management</li>
@@ -48,9 +42,7 @@
             <li>Pre-Event and Post-Event Social Media Coverage</li>
           </ul>
           <br />
-          <p>
-            Explore some of our projects by clicking on the client's name.
-          </p>
+          <p>Explore some of our projects by clicking on the client's name.</p>
         </template>
         <template v-slot:aside>
           <h1 class="text-center">Showcase</h1>
@@ -60,9 +52,7 @@
     <page id="our-network">
       <layout>
         <template v-slot:main>
-          <h1>
-            Our Network
-          </h1>
+          <h1>Our Network</h1>
           <p>
             Do you need help with an upcoming event or would you like to be part
             of our community of creatives? Reach out to us — we are always open
@@ -100,9 +90,7 @@
             back to the community and supporting the local scene.
           </p>
 
-          <p>
-            The unnegotiable.
-          </p>
+          <p>The unnegotiable.</p>
 
           <p>
             The clients we work with embrace — or are open to embracing — this
@@ -121,11 +109,11 @@
 <script lang="ts">
 import {defineComponent} from "vue";
 
-import Page from "@/components/Page.vue";
-import Layout from "@/components/Layout.vue";
-import MainNav from "@/components/MainNav.vue";
-import SideNav from "@/components/SideNav.vue";
-import CustomFooter from "@/components/CustomFooter.vue";
+import Page from "./components/Page.vue";
+import Layout from "./components/Layout.vue";
+import MainNav from "./components/MainNav.vue";
+import SideNav from "./components/SideNav.vue";
+import CustomFooter from "./components/CustomFooter.vue";
 
 export default defineComponent({
   name: "App",
