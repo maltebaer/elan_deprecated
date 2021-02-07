@@ -1,7 +1,7 @@
 <template>
   <SideNav />
-  <MainNav />
-  <div class="scroll-container">
+  <MainNav :active="active" />
+  <div id="scroll-container">
     <Page id="home">
       <main>
         <h1 class="text-center">Home</h1>
@@ -115,6 +115,10 @@ import MainNav from "./components/MainNav.vue";
 import SideNav from "./components/SideNav.vue";
 import Footer from "./components/Footer.vue";
 
+import {useNavigation} from "./use/navigation";
+
+const {active} = useNavigation("home");
+
 export default defineComponent({
   name: "App",
 
@@ -125,11 +129,15 @@ export default defineComponent({
     SideNav,
     Footer,
   },
+
+  setup() {
+    return {active};
+  },
 });
 </script>
 
 <style>
-.scroll-container {
+#scroll-container {
   height: 100%;
 
   overflow-y: scroll;

@@ -2,24 +2,69 @@
   <nav class="base-nav left-0 top-0 right-0 uppercase border border-red-400">
     <ul class="flex justify-between">
       <span>
-        <li class="inline-block">
-          <a href="#home">Logo</a>
+        <li>
+          <button @click="useNavigation('home')">Logo</button>
         </li>
       </span>
       <span class="space-x-4">
         <li class="inline-block">
-          <a href="#what-we-do">What We Do</a>
+          <button
+            :class="active === 'what-we-do' ? 'line-through' : ''"
+            @click="useNavigation('what-we-do')"
+          >
+            What We Do
+          </button>
         </li>
         <li class="inline-block">
-          <a href="#work">Work</a>
+          <button
+            :class="active === 'work' ? 'line-through' : ''"
+            @click="useNavigation('work')"
+          >
+            Work
+          </button>
         </li>
         <li class="inline-block">
-          <a href="#our-network">Our Network</a>
+          <button
+            :class="active === 'our-network' ? 'line-through' : ''"
+            @click="useNavigation('our-network')"
+          >
+            Our Network
+          </button>
         </li>
         <li class="inline-block">
-          <a href="#about">About</a>
+          <button
+            :class="active === 'about' ? 'line-through' : ''"
+            @click="useNavigation('about')"
+          >
+            About
+          </button>
         </li>
       </span>
     </ul>
   </nav>
 </template>
+
+<script lang="ts">
+import {defineComponent, toRefs} from "vue";
+
+import {useNavigation} from "../use/navigation";
+
+export default defineComponent({
+  name: "MainNav",
+
+  props: {
+    active: {
+      type: String,
+    },
+  },
+
+  setup(props) {
+    const {active} = toRefs(props);
+
+    return {
+      useNavigation,
+      active,
+    };
+  },
+});
+</script>
