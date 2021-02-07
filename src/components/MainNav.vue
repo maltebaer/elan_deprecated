@@ -7,7 +7,7 @@
         </li>
       </span>
       <span class="space-x-4">
-        <li class="inline-block">
+        <li class="inline-block" @mouseover="useNavigation('what-we-do')">
           <button
             :class="active === 'what-we-do' ? 'line-through' : ''"
             @click="useNavigation('what-we-do')"
@@ -15,7 +15,7 @@
             What We Do
           </button>
         </li>
-        <li class="inline-block">
+        <li class="inline-block" @mouseover="useNavigation('work')">
           <button
             :class="active === 'work' ? 'line-through' : ''"
             @click="useNavigation('work')"
@@ -23,7 +23,7 @@
             Work
           </button>
         </li>
-        <li class="inline-block">
+        <li class="inline-block" @mouseover="useNavigation('our-network')">
           <button
             :class="active === 'our-network' ? 'line-through' : ''"
             @click="useNavigation('our-network')"
@@ -31,7 +31,7 @@
             Our Network
           </button>
         </li>
-        <li class="inline-block">
+        <li class="inline-block" @mouseover="useNavigation('about')">
           <button
             :class="active === 'about' ? 'line-through' : ''"
             @click="useNavigation('about')"
@@ -45,7 +45,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, toRefs} from "vue";
+import {defineComponent} from "vue";
 
 import {useNavigation} from "../use/navigation";
 
@@ -58,12 +58,9 @@ export default defineComponent({
     },
   },
 
-  setup(props) {
-    const {active} = toRefs(props);
-
+  setup() {
     return {
       useNavigation,
-      active,
     };
   },
 });

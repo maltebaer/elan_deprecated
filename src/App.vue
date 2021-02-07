@@ -1,5 +1,5 @@
 <template>
-  <SideNav />
+  <SideNav :active="active" />
   <MainNav :active="active" />
   <div id="scroll-container">
     <Page id="home">

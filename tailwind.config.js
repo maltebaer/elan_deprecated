@@ -13,6 +13,9 @@ module.exports = {
       listStyleType: {
         square: "square",
       },
+      spacing: {
+        0.25: "0.0625rem",
+      },
     },
   },
   variants: {
