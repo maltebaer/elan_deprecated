@@ -3,8 +3,26 @@
   <MainNav :active="active" />
   <div id="scroll-container">
     <Page id="home">
-      <main>
-        <h1 class="text-center">Home</h1>
+      <main class="relative h-full -m-4 md:m-0">
+        <div class="h-full flex justify-center items-center">
+          <div
+            class="h-128 w-128 md:pt-1/2 md:h-0 md:w-1/2 -mt-20 bg-cover bg-center"
+            style="background-image: url('/images/holo.png')"
+          />
+          <div
+            class="h-128 w-128 md:pt-1/2 md:h-0 md:w-1/2 mt-20 bg-cover"
+            style="background-image: url('/images/cover.png')"
+          />
+        </div>
+        <div
+          class="absolute inset-0 pointer-events-none h-full w-full flex justify-center items-center overflow-hidden mask-repeat-none mask-position-center mask-size-sm lg:mask-size-md xl:mask-size-lg"
+          style="mask-image: url('/images/logo.svg')"
+        >
+          <div
+            class="h-192 w-192 bg-cover animate-spin-slow"
+            style="background-image: url('/images/holo.png')"
+          />
+        </div>
       </main>
     </Page>
     <Page id="what-we-do">
@@ -22,7 +40,9 @@
           </p>
         </template>
         <template v-slot:aside>
-          <h1 class="text-center">Image</h1>
+          <div>
+            <img src="/images/elan.png" alt="elanberlin.com" />
+          </div>
         </template>
       </Layout>
     </Page>
