@@ -1,0 +1,8 @@
+/*
+    FLOW UTILITY
+    like the every layout stack: https://every-layout.dev/layouts/stack/
+    info about this implementation: https://piccalil.li/quick-tip/flow-utility/
+*/
+.flow > * + * {
+    margin-top: var(--flow-space, 1em);
+}

@@ -1,0 +1,26 @@
+/* custom properties */
+@import "tailwindcss/base";
+@import "global/variables.css";
+
+/* global */
+@import "global/reset.css";
+@import "global/global-styles.css";
+
+/* compositions */
+@import "compositions/grid.css";
+@import "compositions/sidebar.css";
+@import "compositions/switcher.css";
+
+/* utilities */
+@import "tailwindcss/utilities";
+@import "utilities/flow.css";
+@import "utilities/region.css";
+@import "utilities/wrapper.css";
+@import "utilities/x-cloak.css";
+
+/* blocks */
+@import "tailwindcss/components";
+@import "blocks/header.css";
+@import "blocks/home.css";
+@import "blocks/footer.css";
+@import "blocks/page.css";

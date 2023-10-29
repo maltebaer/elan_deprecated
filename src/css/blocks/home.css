@@ -1,0 +1,17 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: calc(-1 * var(--gutter));
+}
+
+.home > * {
+    flex-basis: 60vh;
+}
+
+.home > :first-child {
+    translate: 0 -5%;
+}
+.home > :last-child {
+    translate: 0 5%;
+}

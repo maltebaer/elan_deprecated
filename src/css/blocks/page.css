@@ -1,0 +1,17 @@
+@media (min-width: 50rem) {
+    .page-container {
+        scroll-snap-type: y mandatory;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+    .page {
+        height: 100vh;
+        scroll-snap-align: center;
+    }
+
+    .page > .flow {
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+}
