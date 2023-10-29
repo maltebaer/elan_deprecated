@@ -2,7 +2,7 @@
 
 ## technology
 
--   native html
+-   semantic html
 -   css with tailwind
 -   js with alpine
 -   building with vite
