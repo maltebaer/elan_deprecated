@@ -1,6 +1,5 @@
 {
-  "tabWidth": 4,
-  "trailingComma": "all",
-  "bracketSpacing": false,
-  "arrowParens": "always"
+    "tabWidth": 4,
+    "singleAttributePerLine": true,
+    "quoteProps": "consistent"
 }
