@@ -1,38 +1,20 @@
-/*
-SWITCHER
-More info: https://every-layout.dev/layouts/switcher/
-A layout that allows you to lay **2** items next to each other
-until there is not enough horizontal space to allow that.
-
-CUSTOM PROPERTIES AND CONFIGURATION
---gutter (var(--space-size-1)): This defines the space
-between each item
-
---switcher-target-container-width (40rem): How large the container
-needs to be to allow items to sit inline with each other
-
---switcher-vertical-alignment How items should align vertically.
-Can be any acceptable flexbox alignment value.
-*/
 .switcher {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-xl-2xl);
-    align-items: var(--switcher-vertical-alignment, flex-start);
+    gap: var(--switcher-gap, var(--gutter));
 }
 
-.switcher > :first-child {
+.switcher > * {
     flex-grow: 1;
-    flex-basis: calc(
-        (var(--switcher-target-container-width, var(--min-column-width)) - 100%) *
-            999
-    );
+    flex-basis: calc((var(--switcher-container-width, 30rem) - 100%) * 999);
 }
 
-.switcher > :last-child {
+.switcher[data-layout="1-2"] > :last-child {
     flex-grow: 2;
-    flex-basis: calc(
-        (var(--switcher-target-container-width, var(--min-column-width)) - 100%) *
-            999
-    );
+}
+
+/* limits horizontal layout to 4 childs */
+.switcher > :nth-last-child(n + 5),
+.switcher > :nth-last-child(n + 5) ~ * {
+    flex-basis: 100%;
 }
