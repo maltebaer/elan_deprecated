@@ -1,3 +1,8 @@
+.page {
+    --switcher-gap: var(--space-l-xl);
+    --switcher-container-width: 70rem;
+}
+
 @media (min-width: 70rem) {
     .page-container {
         scroll-snap-type: y mandatory;
@@ -8,9 +13,6 @@
     .page {
         height: 100vh;
         scroll-snap-align: center;
-
-        --switcher-gap: var(--space-l-xl);
-        --switcher-container-width: 70rem;
     }
 
     .page > .flow {
