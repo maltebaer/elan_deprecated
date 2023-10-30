@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-inline: calc(-1 * var(--gutter));
 }
 
 .home > * {

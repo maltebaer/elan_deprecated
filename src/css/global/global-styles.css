@@ -55,10 +55,6 @@ a:hover {
     outline-offset: 0.3ch;
 }
 
-:target {
-    scroll-margin-top: 2ex;
-}
-
 main:focus {
     outline: none;
 }

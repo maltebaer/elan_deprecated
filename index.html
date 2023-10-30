@@ -23,8 +23,8 @@
 
     <body>
         <header>
-            <nav class="cluster">
-                <a href="/">ELAN Berlin</a>
+            <nav class="cluster wrapper">
+                <a href="#home">ELAN Berlin</a>
 
                 <ul class="cluster">
                     <li><a href="#what-we-do">What we do</a></li>
@@ -36,7 +36,10 @@
         </header>
 
         <main class="page-container">
-            <article class="home | page | region">
+            <article
+                id="home"
+                class="home | page | region"
+            >
                 <div>
                     <img
                         src="/assets/holo.png"
@@ -187,33 +190,39 @@
                         embracing — this changing world wholeheartedly.
                     </p>
                 </div>
-                <div>
-                    <a href="mailto:raquel@elanberlin.com"
-                        >raquel@elanberlin.com</a
-                    >
-                    <figure>
-                        <img
-                            src="/assets/raquel.png"
-                            alt="Portait of Raquel"
-                        />
-                        <figcaption>Rauquel Fedato</figcaption>
-                    </figure>
-                    <a href="mailto:ricardo@elanberlin.com"
-                        >ricardo@elanberlin.com</a
-                    >
-                    <figure>
-                        <img
-                            src="/assets/ricardo.png"
-                            alt="Portait of Ricardo"
-                        />
-                        <figcaption>Ricardo Oswald</figcaption>
-                    </figure>
+
+                <div class="team flex">
+                    <div>
+                        <a href="mailto:raquel@elanberlin.com"
+                            >raquel@elanberlin.com</a
+                        >
+                        <figure>
+                            <img
+                                src="/assets/raquel.png"
+                                alt="Portait of Raquel"
+                            />
+                            <figcaption>Raquel Fedato</figcaption>
+                        </figure>
+                    </div>
+
+                    <div>
+                        <a href="mailto:ricardo@elanberlin.com"
+                            >ricardo@elanberlin.com</a
+                        >
+                        <figure>
+                            <img
+                                src="/assets/ricardo.png"
+                                alt="Portait of Ricardo"
+                            />
+                            <figcaption>Ricardo Oswald</figcaption>
+                        </figure>
+                    </div>
                 </div>
             </article>
         </main>
 
         <footer>
-            <ul>
+            <ul class="wrapper">
                 <li>
                     <a href="mailto:hello@elanberlin.com"
                         >hello@elanberlin.com</a
