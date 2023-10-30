@@ -1,26 +1,24 @@
 header {
-    display: none;
     padding-block: var(--space-l);
-
-    position: fixed;
-    top: 0;
 }
 
-header > nav {
-    display: flex;
-    gap: var(--gutter);
-}
-
-header > nav > div {
-    margin-inline-start: auto;
+header > nav > ul {
+    --cluster-horizontal-alignment: flex-start;
 }
 
 header > nav a {
     text-decoration: none;
 }
 
+header ul {
+    padding: 0;
+    list-style: none;
+}
+
 @media (min-width: 50rem) {
     header {
-        display: revert;
+        position: fixed;
+        top: 0;
+        inset-inline: 0;
     }
 }
