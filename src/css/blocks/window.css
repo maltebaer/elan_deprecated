@@ -1,0 +1,11 @@
+.window {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 70rem) {
+    .window > :nth-child(2) {
+        flex: 1;
+        overflow: auto;
+    }
+}
