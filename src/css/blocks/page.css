@@ -1,6 +1,11 @@
 .page {
     --switcher-gap: var(--space-l-xl);
     --switcher-container-width: 70rem;
+    --region-space: var(--space-2xl-3xl);
+}
+
+.page aside {
+    background-color: var(--pink-2);
 }
 
 @media (min-width: 70rem) {
@@ -12,6 +17,8 @@
     }
 
     .page {
+        --region-space: var(--gutter);
+
         height: 100%;
         scroll-snap-align: center;
     }
