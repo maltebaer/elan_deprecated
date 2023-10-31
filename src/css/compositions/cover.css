@@ -1,0 +1,10 @@
+.cover {
+    display: flex;
+    flex-direction: column;
+    min-block-size: 100%;
+    padding: 0;
+}
+
+.cover > :first-child {
+    margin-block: auto;
+}
