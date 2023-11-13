@@ -1,30 +1,38 @@
 module.exports = {
-  top: [
-    {
-      text: 'About',
-      url: '/about/'
-    },
-    {
-      text: 'Get started',
-      url: '/get-started/'
-    },
-    {
-      text: 'Built with',
-      url: '/built-with/'
-    },
-    {
-      text: 'Blog',
-      url: '/blog/'
-    }
-  ],
-  bottom: [
-    {
-      text: 'Imprint',
-      url: '/imprint/'
-    },
-    {
-      text: 'Privacy',
-      url: '/privacy/'
-    }
-  ]
+    top: [
+        {
+            text: 'What we do',
+            url: '/#what-we-do'
+        },
+        {
+            text: 'Work',
+            url: '/#work'
+        },
+        {
+            text: 'Our network',
+            url: '/#our-network'
+        },
+        {
+            text: 'About',
+            url: '/#about'
+        }
+    ],
+    bottom: [
+        {
+            text: 'hello@elanberlin.com',
+            url: 'mailto:hello@elanberlin.com'
+        },
+        {
+            text: 'LinkedInd',
+            url: 'https://www.linkedin.com/company/elanberlin/'
+        },
+        {
+            text: 'Instagram',
+            url: 'https://www.instagram.com/elanberlin/'
+        },
+        {
+            text: 'Imprint',
+            url: '/'
+        }
+    ]
 };
